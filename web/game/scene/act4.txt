@@ -28,8 +28,7 @@ changeFigure:none -right -next;
 ; ===== 节点12 第18回 薛宝钗 难 =====
 changeBg:xingqin.webp -next;
 changeFigure:yuanchun.webp -next;
-:元宵之夜，元妃归省，满眼垂泪。;
-贾元春:当日既送我到那不得见人的去处，好容易今日回家娘儿们一会，不说说笑笑，反倒哭起来。;
+贾元春:（元宵归省，满眼垂泪）当日既送我到那不得见人的去处，好容易今日回家娘儿们一会，不说说笑笑，反倒哭起来。;
 changeFigure:none -next;
 changeFigure:baoyu.webp -left -next;
 changeFigure:baochai.webp -right -next;

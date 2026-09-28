@@ -20,7 +20,6 @@ label:n5_c;
 callScene:miss.txt;
 label:n5_r;
 石上原文:凤姐乃道：“这是二十两银子，暂且给这孩子做件冬衣罢。……这钱雇车坐罢。”;
-刘姥姥:凭他怎样，你老拔根寒毛比我们的腰还粗呢！;
 解读:既顾全体面，又不多给——凤姐的精明全在这二十两里。;
 changeFigure:none -left -next;
 changeFigure:none -right -next;
@@ -65,8 +64,7 @@ label:n7_c;
 callScene:miss.txt;
 label:n7_r;
 石上原文:果然一面有四个篆字，两面八字，共成两句吉谶：不离不弃，芳龄永继。;
-:话犹未了，黛玉摇摇的走了进来，笑道：“嗳哟，我来的不巧了！”;
-解读:玉上与锁上的字恰成一对，「金玉良缘」由此点出，与「木石前盟」遥遥相对。;
+解读:玉上与锁上的字恰成一对，「金玉良缘」由此点出。话犹未了，黛玉走来笑道：“嗳哟，我来的不巧了！”;
 changeFigure:none -left -next;
 changeFigure:none -right -next;
 
