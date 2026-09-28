@@ -90,7 +90,7 @@ label:n8_b;
 平行世界:躲？凤姐从来不是躲事的人。;
 callScene:miss.txt;
 label:n8_r;
-石上原文:凤姐假意含笑应承，心里暗忖道：“……几时叫他死在我的手里，他才知道我的手段！”;
+石上原文:凤姐……见他去远了，心里暗忖道：“……几时叫他死在我的手里，他才知道我的手段！”;
 changeFigure:none -left -next;
 changeFigure:none -right -next;
 

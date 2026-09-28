@@ -10,10 +10,10 @@ label:r1_o;
 callScene:review_hit.txt;
 jumpLabel:r1_r;
 label:r1_x;
-callScene:review_miss.txt;
+callScene:review_miss.txt -ans=薛家;
 jumpLabel:r1_r;
 label:r1_y;
-callScene:review_miss.txt;
+callScene:review_miss.txt -ans=薛家;
 label:r1_r;
 
 ; R2 第12回 风月宝鉴
@@ -23,10 +23,10 @@ label:r2_o;
 callScene:review_hit.txt;
 jumpLabel:r2_r;
 label:r2_x;
-callScene:review_miss.txt;
+callScene:review_miss.txt -ans=凤姐站在里面招手叫他;
 jumpLabel:r2_r;
 label:r2_y;
-callScene:review_miss.txt;
+callScene:review_miss.txt -ans=凤姐站在里面招手叫他;
 label:r2_r;
 
 ; R3 第13回 秦可卿临别赠言；干扰项均出自第1回
@@ -36,9 +36,9 @@ label:r3_o;
 callScene:review_hit.txt;
 jumpLabel:r3_r;
 label:r3_x;
-callScene:review_miss.txt;
+callScene:review_miss.txt -ans=各自须寻各自门;
 jumpLabel:r3_r;
 label:r3_y;
-callScene:review_miss.txt;
+callScene:review_miss.txt -ans=各自须寻各自门;
 label:r3_r;
 changeScene:ending.txt;
