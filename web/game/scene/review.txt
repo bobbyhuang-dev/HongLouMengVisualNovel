@@ -1,0 +1,48 @@
+; 石上回顾：三题各 +2，只考游戏中出现过的原文与解读，防止跳读
+changeBg:qinggeng.webp -next;
+intro:石上回顾|三道题，每题 +2 -delayTime=500 -fontSize=large -backgroundColor=rgba(20,18,16,0.82) -fontColor=rgba(243,237,226,1);
+changeFigure:kongkong.webp -next;
+空空道人:石兄且慢。石上字迹既已还原，我且考你三处，看你是否真的读过了。;
+
+; R1 第4回 门子之言
+空空道人:【回顾一 +2】护官符里「丰年好大雪」一句，说的是哪一家？;
+choose:史家:r1_x|薛家:r1_o|王家:r1_y;
+label:r1_o;
+callScene:review_hit.txt;
+jumpLabel:r1_r;
+label:r1_x;
+callScene:review_miss.txt;
+jumpLabel:r1_r;
+label:r1_y;
+callScene:review_miss.txt;
+label:r1_r;
+石上原文:今告打死人之薛，就系丰年大雪之‘雪’也。;
+
+; R2 第12回 风月宝鉴
+空空道人:【回顾二 +2】贾瑞把「风月宝鉴」向正面一照，看见了什么？;
+choose:一个骷髅立在里面:r2_x|太虚幻境的石牌坊:r2_y|凤姐站在里面招手叫他:r2_o;
+label:r2_o;
+callScene:review_hit.txt;
+jumpLabel:r2_r;
+label:r2_x;
+callScene:review_miss.txt;
+jumpLabel:r2_r;
+label:r2_y;
+callScene:review_miss.txt;
+label:r2_r;
+石上原文:向反面一照，只见一个骷髅立在里面。……又将正面一照，只见凤姐站在里面招手叫他。;
+
+; R3 第13回 秦可卿临别赠言；干扰项均出自第1回
+空空道人:【回顾三 +2】秦可卿临别赠凤姐两句：“三春去后诸芳尽”，下一句是——;
+choose:便是烟消火灭时:r3_x|各自须寻各自门:r3_o|反认他乡是故乡:r3_y;
+label:r3_o;
+callScene:review_hit.txt;
+jumpLabel:r3_r;
+label:r3_x;
+callScene:review_miss.txt;
+jumpLabel:r3_r;
+label:r3_y;
+callScene:review_miss.txt;
+label:r3_r;
+石上原文:三春去后诸芳尽，各自须寻各自门。（另两句都出自第一回。）;
+changeScene:ending.txt;

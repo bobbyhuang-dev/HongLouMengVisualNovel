@@ -1,0 +1,9 @@
+; 还原成功：callScene:hit.txt -pts=N;
+; 连击每满 3 次额外 +1 并清零。
+setVar:score=score+pts;
+setVar:hits=hits+1;
+setVar:combo=combo+1;
+setVar:score=score+1 -when=combo==3;
+:【还原成功 +{pts}】连续还原三处，连击奖励 +1！当前积分：{score} -when=combo==3;
+:【还原成功 +{pts}】当前积分：{score}　连击 {combo}/3 -when=combo<3;
+setVar:combo=0 -when=combo==3;

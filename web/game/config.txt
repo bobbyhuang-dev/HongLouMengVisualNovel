@@ -1,0 +1,7 @@
+Game_name:红楼抉择;
+Game_key:hlm-choice-20;
+Enable_Appreciation:false;
+Enable_Continue:true;
+Enable_flowchart:false;
+Title_img:title.webp;
+Default_Language:zh_CN;

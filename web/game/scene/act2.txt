@@ -1,0 +1,103 @@
+; 第二幕 暗流（第6–12回）：节点5 刘姥姥、节点6 宫花、节点7 金锁、节点8 贾瑞
+intro:第二幕　暗流|第六回至第十二回 -delayTime=500 -fontSize=large -backgroundColor=rgba(20,18,16,0.82) -fontColor=rgba(243,237,226,1);
+
+; ===== 节点5 第6回 王熙凤 易 =====
+changeBg:fengjie_room.webp -next;
+changeFigure:laolao.webp -left -next;
+changeFigure:fengjie.webp -right -next;
+:【第六回 · 你是王熙凤 · 易 +1】刘姥姥家中冬事未办，带着板儿来荣国府找门路：;
+刘姥姥:……只因他老子娘在家里，连吃的都没有。如今天又冷了……只得带了你侄儿奔了你老来。;
+choose:推说府中艰难，一文不给，客客气气请她回去:n5_a|一出手就是一百两，显显贾府的气派:n5_c|给二十两银子，另拿一吊钱雇车:n5_b;
+label:n5_b;
+callScene:hit.txt -pts=1;
+jumpLabel:n5_r;
+label:n5_a;
+平行世界:叫远亲空手而回，传出去丢的是荣国府的脸——凤姐最讲体面。;
+callScene:miss.txt;
+jumpLabel:n5_r;
+label:n5_c;
+平行世界:一百两？凤姐精明得很，嘴上还要叹一声“大有大的艰难去处”呢。;
+callScene:miss.txt;
+label:n5_r;
+石上原文:凤姐乃道：“这是二十两银子，暂且给这孩子做件冬衣罢。……这钱雇车坐罢。”;
+刘姥姥:凭他怎样，你老拔根寒毛比我们的腰还粗呢！;
+解读:既顾全体面，又不多给——凤姐的精明全在这二十两里。;
+changeFigure:none -left -next;
+changeFigure:none -right -next;
+
+; ===== 节点6 第7回 林黛玉 中 =====
+changeBg:inner_room.webp -next;
+changeFigure:daiyu.webp -next;
+:【第七回 · 你是林黛玉 · 中 +2】周瑞家的替薛姨妈送宫花，一路送下来，最后才到黛玉。;
+林黛玉:还是单送我一人的，还是别的姑娘们都有呢？;
+周瑞家的:各位都有了，这两枝是姑娘的了。;
+choose:“我就知道，别人不挑剩下的也不给我。”:n6_a|“多谢姨妈惦记，替我道个谢罢。”:n6_b|“我不爱这些，转送给雪雁戴罢。”:n6_c;
+label:n6_a;
+callScene:hit.txt -pts=2;
+jumpLabel:n6_r;
+label:n6_b;
+平行世界:这般客气周全，倒像宝钗的做派了。;
+callScene:miss.txt;
+jumpLabel:n6_r;
+label:n6_c;
+平行世界:黛玉并非不在意宫花，她在意的是自己被排在了最后。;
+callScene:miss.txt;
+label:n6_r;
+石上原文:黛玉冷笑道：“我就知道，别人不挑剩下的也不给我。”;
+解读:一声冷笑，见出黛玉的敏感，底下是寄人篱下的自尊。;
+changeFigure:none -next;
+
+; ===== 节点7 第8回 薛宝钗 难 =====
+changeBg:lixiang.webp -next;
+changeFigure:baoyu.webp -left -next;
+changeFigure:baochai.webp -right -next;
+:【第八回 · 你是薛宝钗 · 难 +3】宝玉到梨香院探病。宝钗托着通灵宝玉，念道：“莫失莫忘，仙寿恒昌。”;
+莺儿:我听这两句话，倒像和姑娘的项圈上的两句话是一对儿。;
+:宝钗金锁上錾的，是哪八个字？;
+choose:长命百岁，富贵千秋:n7_a|不离不弃，芳龄永继:n7_b|莫离莫弃，福寿永昌:n7_c;
+label:n7_b;
+callScene:hit.txt -pts=3;
+jumpLabel:n7_r;
+label:n7_a;
+callScene:miss.txt;
+jumpLabel:n7_r;
+label:n7_c;
+callScene:miss.txt;
+label:n7_r;
+石上原文:果然一面有四个篆字，两面八字，共成两句吉谶：不离不弃，芳龄永继。;
+:话犹未了，黛玉摇摇的走了进来，笑道：“嗳哟，我来的不巧了！”;
+解读:玉上与锁上的字恰成一对，「金玉良缘」由此点出，与「木石前盟」遥遥相对。;
+changeFigure:none -left -next;
+changeFigure:none -right -next;
+
+; ----- 幕间：第9–10回 -----
+:宝玉与秦钟同入家塾，闹出一场「顽童闹学堂」。不久，秦可卿一病不起。;
+
+; ===== 节点8 第11回 王熙凤 中 =====
+changeBg:huifang.webp -next;
+changeFigure:jiarui.webp -left -next;
+changeFigure:fengjie.webp -right -next;
+:【第十一回 · 你是王熙凤 · 中 +2】贾敬寿辰，凤姐穿过会芳园，贾瑞忽从假山石后走来——;
+贾瑞:也是合该我与嫂子有缘。……不想就遇见嫂子也从这里来。这不是有缘么？;
+:一面说着，一面拿眼睛不住的觑着凤姐儿。;
+choose:当场翻脸，喝令他滚开，再去告诉贾珍:n8_a|躲回房中，从此避而不见:n8_b|假意含笑应承，暗中起意惩治:n8_c;
+label:n8_c;
+callScene:hit.txt -pts=2;
+jumpLabel:n8_r;
+label:n8_a;
+平行世界:当场翻脸固然痛快，可凤姐要的，是叫他尝尝自己的手段。;
+callScene:miss.txt;
+jumpLabel:n8_r;
+label:n8_b;
+平行世界:躲？凤姐从来不是躲事的人。;
+callScene:miss.txt;
+label:n8_r;
+石上原文:凤姐假意含笑应承，心里暗忖道：“……几时叫他死在我的手里，他才知道我的手段！”;
+changeFigure:none -left -next;
+changeFigure:none -right -next;
+
+; ----- 第12回（回顾二出自这里） -----
+:凤姐「毒设相思局」，贾瑞冻了一夜、又被敲诈，一病不起。跛足道人送来「风月宝鉴」，嘱他只照背面。;
+石上原文:向反面一照，只见一个骷髅立在里面。……又将正面一照，只见凤姐站在里面招手叫他。;
+解读:贾瑞偏照正面，终于丧命。美人是「假」，骷髅是「真」——“假作真时真亦假”。;
+changeScene:act3.txt;

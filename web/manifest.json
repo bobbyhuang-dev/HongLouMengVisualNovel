@@ -1,0 +1,33 @@
+{
+  "name": "红楼抉择",
+  "short_name": "红楼抉择",
+  "start_url": ".",
+  "display": "fullscreen",
+  "description": "《红楼梦》前二十回剧情抉择视觉小说",
+  "dir": "auto",
+  "orientation": "landscape",
+  "icons": [
+    {
+      "src": "./icons/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "./icons/icon-192-maskable.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable"
+    },
+    {
+      "src": "./icons/icon-512-maskable.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ]
+}

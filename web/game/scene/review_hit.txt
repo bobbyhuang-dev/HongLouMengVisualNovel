@@ -1,0 +1,2 @@
+setVar:score=score+2;
+:【回顾正确 +2】当前积分：{score};

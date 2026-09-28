@@ -1,0 +1,27 @@
+; 结算：基础分 +1 → 定格计时 → 称号
+setVar:score=score+1;
+changeBg:title.webp -next;
+changeFigure:none -next;
+:【计时结束】十三处关键，你还原了 {hits} 处；完成一局，基础分 +1。总积分：{score};
+jumpLabel:rank1 -when=score>=32;
+jumpLabel:rank2 -when=score>=24;
+jumpLabel:rank3 -when=score>=15;
+jumpLabel:rank4;
+
+label:rank1;
+称号:「通灵宝玉」——石上字字分明，你就是那块通灵的石头。;
+jumpLabel:done;
+label:rank2;
+称号:「金陵才子」——前二十回烂熟于心，偶有一两处看走了眼。;
+jumpLabel:done;
+label:rank3;
+称号:「贾府常客」——大事都记得，细节还要再翻翻书。;
+jumpLabel:done;
+label:rank4;
+称号:「初进荣国府」——如刘姥姥一进荣国府，处处新奇。再读一遍吧！;
+
+label:done;
+changeFigure:kongkong.webp -left -next;
+空空道人:这便是石兄还原的《石头记》前二十回。后面的故事，就请翻开书，自己去读吧。;
+:请举手示意计分员记录「积分 · 用时」，记录完毕后再点击返回标题。;
+end;

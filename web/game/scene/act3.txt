@@ -1,0 +1,62 @@
+; 第三幕 一丧一喜（第13–16回）：节点9 秦可卿托梦、节点10 弄权铁槛寺
+intro:第三幕　一丧一喜|第十三回至第十六回 -delayTime=500 -fontSize=large -backgroundColor=rgba(20,18,16,0.82) -fontColor=rgba(243,237,226,1);
+
+; ===== 节点9 第13回 王熙凤 中（回顾三出自这里） =====
+changeBg:night_room.webp -next;
+changeFigure:keqing.webp -left -next;
+changeFigure:fengjie.webp -right -next;
+:【第十三回 · 你是王熙凤 · 中 +2】三更时分，凤姐恍惚只见秦氏从外走来——;
+秦可卿:常言‘月满则亏，水满则溢’……如今我们家赫赫扬扬，已将百载，一日倘或乐极悲生……;
+王熙凤:这话虑的极是，但有何法可以永保无虞？;
+choose:趁今日富贵，在祖茔附近多置田庄房舍地亩，家塾也设在那里:n9_a|多备金银，打点宫里，保住贾家的圣眷:n9_b|早日分家，各房自谋生路:n9_c;
+label:n9_a;
+callScene:hit.txt -pts=2;
+jumpLabel:n9_r;
+label:n9_b;
+平行世界:金银再多，一旦获罪也要入官。秦氏想的，是抄家也抄不走的退路。;
+callScene:miss.txt;
+jumpLabel:n9_r;
+label:n9_c;
+平行世界:秦氏要的是合族一同定下规矩，为全族留一条后路。;
+callScene:miss.txt;
+label:n9_r;
+石上原文:趁今日富贵，将祖茔附近多置田庄房舍地亩……便败落下来，子孙回家读书务农，也有个退步。;
+秦可卿:三春去后诸芳尽，各自须寻各自门。;
+changeFigure:none -left -next;
+:云板连叩四下，凤姐惊醒——东府蓉大奶奶没了。;
+解读:盛极之时，秦可卿已看见了衰败。;
+changeFigure:none -right -next;
+
+; ----- 幕间：第13–14回 -----
+changeBg:rongfu.webp -next;
+:凤姐协理宁国府，点卯有人来迟，她喝命：“带出去，打二十板子！”宁府上下从此不敢怠慢。林如海也在扬州病故。;
+
+; ===== 节点10 第15回 王熙凤 中 =====
+changeBg:nunnery.webp -next;
+changeFigure:jingxu.webp -left -next;
+changeFigure:fengjie.webp -right -next;
+:【第十五回 · 你是王熙凤 · 中 +2】凤姐在馒头庵歇脚，老尼净虚求她修书给长安节度云老爷，逼守备家退了张金哥的亲——;
+净虚:若是肯行，张家连倾家孝顺也都情愿。;
+王熙凤:我也不等银子使，也不做这样的事。;
+净虚:……如今不管这事，张家不知道……倒像府里连这点子手段也没有的一般。;
+choose:仍然一口回绝，不管这桩闲事:n10_a|发了兴头，要三千两银子，替张家出这口气:n10_b|分文不取，只当替佛门行善:n10_c;
+label:n10_b;
+callScene:hit.txt -pts=2;
+jumpLabel:n10_r;
+label:n10_a;
+平行世界:若真回绝，倒是一桩善事——可凤姐最受不得一个「激」字。;
+callScene:miss.txt;
+jumpLabel:n10_r;
+label:n10_c;
+平行世界:分文不取、行善积德？这可不像那个在宁府说一不二的凤姐。;
+callScene:miss.txt;
+label:n10_r;
+石上原文:凤姐便发了兴头：“你是素日知道我的，从来不信什么是阴司地狱报应的……你叫他拿三千银子来，我就替他出这口气。”;
+解读:结果金哥自缢，守备之子投河——三千两银子断送了两条性命。这是凤姐精明强干的另一面。;
+changeFigure:none -left -next;
+changeFigure:none -right -next;
+
+; ----- 幕间：第16回 -----
+changeBg:rongfu.webp -next;
+:第十六回，元春“晋封为凤藻宫尚书，加封贤德妃”，贾府奉旨修建省亲别墅。秦钟病逝。;
+changeScene:act4.txt;
