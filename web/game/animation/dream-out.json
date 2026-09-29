@@ -1,0 +1,21 @@
+[
+ {
+  "alpha": 1,
+  "blur": 0,
+  "position": {
+   "x": 0,
+   "y": 0
+  },
+  "duration": 0
+ },
+ {
+  "alpha": 0,
+  "blur": 14,
+  "position": {
+   "x": 0,
+   "y": -40
+  },
+  "duration": 1200,
+  "ease": "easeIn"
+ }
+]

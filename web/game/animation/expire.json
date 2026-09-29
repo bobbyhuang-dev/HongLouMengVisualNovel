@@ -1,0 +1,46 @@
+[
+ {
+  "alpha": 1,
+  "blur": 0,
+  "brightness": 1,
+  "position": {
+   "x": 0,
+   "y": 0
+  },
+  "scale": {
+   "x": 1,
+   "y": 1
+  },
+  "duration": 0
+ },
+ {
+  "alpha": 1,
+  "blur": 0,
+  "brightness": 0.72,
+  "position": {
+   "x": 0,
+   "y": 36
+  },
+  "scale": {
+   "x": 1,
+   "y": 0.985
+  },
+  "duration": 1300,
+  "ease": "easeInOut"
+ },
+ {
+  "alpha": 0,
+  "blur": 12,
+  "brightness": 1.4,
+  "position": {
+   "x": 0,
+   "y": -50
+  },
+  "scale": {
+   "x": 1,
+   "y": 1
+  },
+  "duration": 1800,
+  "ease": "easeIn"
+ }
+]

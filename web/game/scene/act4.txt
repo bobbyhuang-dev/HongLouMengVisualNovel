@@ -1,79 +1,137 @@
-; 第四幕 大观园（第17–20回）：节点11 有凤来仪、节点12 绿蜡、节点13 爱哥哥
+; 第四幕 大观园（第17–20回）：节点17 有凤来仪、节点18 宝钗提点改字、节点19 袭人规劝、节点20 赶围棋；第20回尾声不计分
 intro:第四幕　大观园|第十七回至第二十回 -delayTime=500 -fontSize=large -backgroundColor=rgba(20,18,16,0.82) -fontColor=rgba(243,237,226,1);
 
-; ===== 节点11 第17回 贾宝玉 中 =====
+; ===== 节点17 第17回 贾宝玉 中 =====
 changeBg:bamboo.webp -next;
-changeFigure:baoyu.webp -left -next;
-changeFigure:jiazheng.webp -right -next;
-:【第十七回 · 你是贾宝玉 · 中 +2】贾政带宝玉游园题对额。来到一处千百竿翠竹遮映，清客题“淇水遗风”“睢园雅迹”，贾政都嫌俗。;
-贾宝玉:都似不妥。这是第一处行幸之处，必须颂圣方可。;
-:宝玉会为这处竹院题什么？;
-choose:有凤来仪:n11_a|蘅芷清芬:n11_b|杏帘在望:n11_c;
-label:n11_a;
+changeFigure:jiazheng.webp -right -enter=walk-in-right -next;
+changeFigure:baoyu_timid.webp -left -enter=walk-in-left -next;
+:【第十七回 · 你是贾宝玉 · 中 +2】省亲园林落成，贾政命宝玉题额。来到千百竿翠竹遮映的一处——;
+changeFigureDiff:baoyu_proud.webp -left -next;
+setAnimation:approach-right -target=fig-left -next;
+贾宝玉:这是第一处行幸之处，必须颂圣方可。;
+choose:有凤来仪:n17_a|蘅芷清芬:n17_b|杏帘在望:n17_c;
+label:n17_a;
 callScene:hit.txt -pts=2;
-jumpLabel:n11_r;
-label:n11_b;
-:「蘅芷清芬」是宝玉为那处满院香草的院落题的，不在这里。;
+jumpLabel:n17_r;
+label:n17_b;
+:「蘅芷清芬」是宝玉为满院香草的院落题的，不在这里。;
 callScene:miss.txt;
-jumpLabel:n11_r;
-label:n11_c;
-:「杏帘在望」是宝玉为那处田庄题的，不在这里。;
+jumpLabel:n17_r;
+label:n17_c;
+:「杏帘在望」是宝玉为田庄题的，不在这里。;
 callScene:miss.txt;
-label:n11_r;
+label:n17_r;
+changeFigureDiff:jiazheng_nod.webp -right -next;
+setAnimation:nod -target=fig-right -next;
 石上原文:宝玉道：“……莫若‘有凤来仪’四字。”众人都哄然叫妙。贾政点头道：“畜生，畜生，可谓‘管窥蠡测’矣。”;
-解读:凤凰非竹实不食，「有凤来仪」既合翠竹，又颂贵妃驾临。元妃后来赐名「潇湘馆」。;
+解读:凤凰非竹实不食，「有凤来仪」既合翠竹，又颂贵妃驾临。此处后来便是「潇湘馆」。;
 changeFigure:none -left -next;
 changeFigure:none -right -next;
 
-; ===== 节点12 第18回 薛宝钗 难 =====
+; ===== 节点18 第18回 薛宝钗 中 =====
 changeBg:xingqin.webp -next;
-changeFigure:yuanchun.webp -next;
-贾元春:（元宵归省，满眼垂泪）当日既送我到那不得见人的去处，好容易今日回家娘儿们一会，不说说笑笑，反倒哭起来。;
+changeFigure:yuanchun_tearful.webp -enter=dream-in -next;
+贾元春:当日既送我到那不得见人的去处……不说说笑笑，反倒哭起来。;
 changeFigure:none -next;
 changeFigure:baoyu.webp -left -next;
-changeFigure:baochai.webp -right -next;
-:【第十八回 · 你是薛宝钗 · 难 +3】元妃不喜「红香绿玉」，已改作「怡红快绿」，宝玉的诗里却偏写了“绿玉春犹卷”。;
-:宝钗会教他把「绿玉」改成什么？;
-choose:绿云:n12_a|绿烟:n12_b|绿蜡:n12_c;
-label:n12_c;
-callScene:hit.txt -pts=3;
-jumpLabel:n12_r;
-label:n12_a;
-callScene:miss.txt;
-jumpLabel:n12_r;
-label:n12_b;
-callScene:miss.txt;
-label:n12_r;
-薛宝钗:你只把‘绿玉’的‘玉’字改作‘蜡’字就是了。……唐钱珝咏芭蕉诗头一句：‘冷烛无烟绿蜡乾’，你都忘了不成？;
-贾宝玉:……真可谓‘一字师’了。从此后我只叫你师父，再不叫姐姐了。;
-changeFigure:daiyu.webp -right -next;
-:黛玉则替他代作了一首《杏帘在望》，元妃指为前三首之冠。;
-解读:宝钗提点不露声色，黛玉倾心代作——两种才情，两种性情。;
+changeFigure:baochai.webp -right -exit=walk-out-right -next;
+:【第十八回 · 你是薛宝钗 · 中 +2】元妃刚把「红香绿玉」改作「怡红快绿」，宝玉诗稿上偏写着“绿玉春犹卷”。你会——;
+choose:当众指出，免他在娘娘跟前出丑:n18_a|趁人不理论，悄悄推他改字:n18_b|只作没看见，何必多事:n18_c;
+label:n18_b;
+callScene:hit.txt -pts=2;
+jumpLabel:n18_r;
+label:n18_a;
+setVar:pw18=1;
+callScene:pw.txt -pw=当众说破？宝玉难堪，元妃扫兴，宝钗最懂场面。;
+jumpLabel:n18_r;
+label:n18_c;
+setVar:pw18=2;
+callScene:pw.txt -pw=宝钗平日不爱多事，这一回却没有袖手。;
+label:n18_r;
+changeFigureDiff:baochai_smile.webp -right -next;
+setAnimation:approach-left -target=fig-right -next;
+石上原文:宝钗……急忙回身悄推他道：“……你这会子偏用‘绿玉’二字，岂不是有意和他争驰了？”;
+薛宝钗:你只把‘绿玉’的‘玉’字改作‘蜡’字就是了。……‘冷烛无烟绿蜡干’，你都忘了不成？;
+changeFigureDiff:baoyu_smile.webp -left -next;
+setAnimation:bow -target=fig-left -next;
+解读:宝玉叹她是「一字师」。宝钗提点不露声色；黛玉干脆替他代作《杏帘在望》——两种才情，两种性情。;
 changeFigure:none -left -next;
 changeFigure:none -right -next;
 
-; ----- 幕间：第19回 -----
-changeBg:inner_room.webp -next;
-:第十九回，袭人借“赎身”与宝玉约法三章；宝玉编了个「耗子精偷香芋」的故事逗黛玉。;
-
-; ===== 节点13 第20回 林黛玉 易 =====
-changeFigure:xiangyun.webp -left -next;
-changeFigure:daiyu.webp -right -next;
-:【第二十回 · 你是林黛玉 · 易 +1】史湘云来了，一进门便笑道：;
-史湘云:二哥哥，林姐姐，你们天天一处顽，我好容易来了，也不理我一理儿。;
-:湘云说话咬舌，黛玉立刻打趣她——湘云把「二哥哥」叫成了什么？;
-choose:饿哥哥:n13_a|爱哥哥:n13_b|耳哥哥:n13_c;
-label:n13_b;
-callScene:hit.txt -pts=1;
-jumpLabel:n13_r;
-label:n13_a;
-callScene:miss.txt;
-jumpLabel:n13_r;
-label:n13_c;
-callScene:miss.txt;
-label:n13_r;
-石上原文:黛玉笑道：“偏是咬舌子爱说话，连个‘二’哥哥也叫不出来，只是‘爱’哥哥‘爱’哥哥的。”;
-解读:同一回，宝玉劝黛玉“亲不间疏，先不僭后”——宝、黛、钗的心事从此展开。;
+; ===== 节点19 第19回 袭人 中 =====
+; 干扰项：实说不走（最坦诚）、推给长辈（最守本分）；袭人是「先用骗词，以探其情，以压其气，然后好下箴规」
+changeBg:night_room.webp -next;
+changeFigure:xiren.webp -right -next;
+changeFigure:baoyu.webp -left -next;
+:【第十九回 · 你是袭人 · 中 +2】你回家时，母兄说要赎你出去，你哭闹说“至死也不回去”。夜里你却向宝玉提起赎身的话——;
+贾宝玉:依你说，你是去定了？;
+choose:偏说要走，看他怎样:n19_a|实说已回绝家里，不走:n19_b|说去留全凭老太太做主:n19_c;
+label:n19_a;
+callScene:hit.txt -pts=2;
+jumpLabel:n19_r;
+label:n19_b;
+setVar:pw19=1;
+callScene:pw.txt -pw=实话实说，宝玉安了心，那几条规劝也就无从开口。;
+jumpLabel:n19_r;
+label:n19_c;
+setVar:pw19=2;
+callScene:pw.txt -pw=推给老太太？袭人要的是宝玉自己着急。;
+label:n19_r;
+changeFigureDiff:xiren_firm.webp -right -next;
+袭人:去定了。;
+setAnimation:slump -target=fig-left -next;
+石上原文:今日可巧有赎身之论，故先用骗词，以探其情，以压其气，然后好下箴规。;
+changeFigureDiff:xiren_smile.webp -right -next;
+setAnimation:approach-left -target=fig-right -next;
+袭人:……只是百事检点些，不任意任情的就是了。;
+解读:她要宝玉改的：不说化灰化烟，人前作出喜读书的样子，不吃人嘴上的胭脂。以情相留，借势规劝。;
 changeFigure:none -left -next;
+changeFigure:none -right -next;
+
+; ===== 节点20 第20回 薛宝钗 中 =====
+; 干扰项：替莺儿作证（最公道）、这盘作废（最圆滑）；宝钗先顾的是主仆规矩
+changeBg:lixiang.webp -next;
+changeFigure:jiahuan.webp -left -next;
+changeFigure:baochai.webp -next;
+changeFigure:yinger.webp -right -next;
+:【第二十回 · 你是薛宝钗 · 中 +2】正月里，贾环和你们掷骰子赶围棋，连输几盘。这一掷明明是个幺，他抓起骰子就拿钱，说是六点。;
+setAnimation:lunge-right -target=fig-left -next;
+莺儿:分明是个幺！;
+choose:替莺儿作证，叫他认输:n20_a|两边劝开，这一盘不算:n20_b|喝住莺儿，叫她放下钱来:n20_c;
+label:n20_c;
+callScene:hit.txt -pts=2;
+jumpLabel:n20_r;
+label:n20_a;
+setVar:pw20=1;
+callScene:pw.txt -pw=当众替丫头驳一个爷？宝钗偏先顾主仆的规矩。;
+jumpLabel:n20_r;
+label:n20_b;
+setVar:pw20=2;
+callScene:pw.txt -pw=一盘作废看似公道，宝钗却宁可委屈自家丫头。;
+label:n20_r;
+changeFigureDiff:baochai_stern.webp -next;
+石上原文:宝钗见贾环急了，便瞅莺儿说道：“越大越没规矩，难道爷们还赖你？还不放下钱来呢！”;
+changeFigureDiff:yinger_pout.webp -right -next;
+莺儿:……前儿我和宝二爷顽，他输了那些，也没着急。;
+changeFigureDiff:jiahuan_cry.webp -left -next;
+setAnimation:sob -target=fig-left -next;
+贾环:我拿什么比宝玉呢。你们怕他，都和他好，都欺负我不是太太养的。;
+解读:宝钗宁可委屈自家丫头，也要顾全主子的体面；一句「比宝玉」，却戳中了贾环庶出的心病。;
+changeFigure:none -left -next;
+changeFigure:none -next;
+changeFigure:none -right -next;
+
+; ----- 尾声：第20回（不计分） -----
+changeBg:inner_room.webp -next;
+changeFigure:daiyu_tearful.webp -right -next;
+changeFigure:baoyu.webp -left -next;
+林黛玉:我为的是我的心。;
+贾宝玉:我也为的是我的心。难道你就知你的心，不知我的心不成？;
+changeFigure:xiangyun_pout.webp -enter=walk-in-left -next;
+changeFigureDiff:daiyu_smile.webp -right -next;
+setAnimation:laugh -target=fig-right -next;
+:湘云咬舌，把「二哥哥」叫成「爱哥哥」，被黛玉打趣。问心落泪，转眼斗嘴，前二十回就此收尾。;
+changeFigure:none -left -next;
+changeFigure:none -next;
 changeFigure:none -right -next;
 changeScene:review.txt;

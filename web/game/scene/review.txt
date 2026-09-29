@@ -1,44 +1,44 @@
-; 石上回顾：三题各 +2，只考游戏中出现过的原文与解读，防止跳读
+; 石上回顾：三题各 +2。每题都要把游戏里前后两处原文、旁白或解读连起来想，跳读或只记单句的人答不出；干扰项也都出自第 1–20 回
 changeBg:qinggeng.webp -next;
 intro:石上回顾|三道题，每题 +2 -delayTime=500 -fontSize=large -backgroundColor=rgba(20,18,16,0.82) -fontColor=rgba(243,237,226,1);
-changeFigure:kongkong.webp -next;
+changeFigure:kongkong_ask.webp -enter=dream-in -next;
 
-; R1 第4回 门子之言
-空空道人:【回顾一 +2】护官符里「丰年好大雪」一句，说的是哪一家？;
-choose:史家:r1_x|薛家:r1_o|王家:r1_y;
+; R1 情节前后照应：第13回托梦预告 → 第16回元春晋封（两处都在游戏里出现；干扰项龙禁尉、协理宁国府出自第13–14回幕间）
+空空道人:【回顾一 +2】秦可卿托梦说“不日又有一件非常喜事”，却“天机不可泄漏”。这件喜事是——;
+choose:贾蓉捐了五品龙禁尉，丧礼风光:r1_x|凤姐协理宁国府，上下不敢怠慢:r1_y|元春晋封贤德妃，奉旨修建省亲别墅:r1_o;
 label:r1_o;
 callScene:review_hit.txt;
 jumpLabel:r1_r;
 label:r1_x;
-callScene:review_miss.txt -ans=薛家;
+callScene:review_miss.txt -ans=元春晋封贤德妃;
 jumpLabel:r1_r;
 label:r1_y;
-callScene:review_miss.txt -ans=薛家;
+callScene:review_miss.txt -ans=元春晋封贤德妃;
 label:r1_r;
 
-; R2 第12回 风月宝鉴
-空空道人:【回顾二 +2】贾瑞把「风月宝鉴」向正面一照，看见了什么？;
-choose:一个骷髅立在里面:r2_x|太虚幻境的石牌坊:r2_y|凤姐站在里面招手叫他:r2_o;
+; R2 主题与文化：第12回风月宝鉴 ↔ 第1回太虚幻境对联（答案在第1–2回幕间出现过；两个干扰项均出自第5回）
+空空道人:【回顾二 +2】风月宝鉴正面美人招手，背面骷髅立着，贾瑞偏把假的当了真。这正应了书中哪一副对联？;
+choose:假作真时真亦假，无为有处有还无:r2_o|世事洞明皆学问，人情练达即文章:r2_x|厚地高天，堪叹古今情不尽；痴男怨女，可怜风月债难酬:r2_y;
 label:r2_o;
 callScene:review_hit.txt;
 jumpLabel:r2_r;
 label:r2_x;
-callScene:review_miss.txt -ans=凤姐站在里面招手叫他;
+callScene:review_miss.txt -ans=第一回的“假作真时真亦假，无为有处有还无”;
 jumpLabel:r2_r;
 label:r2_y;
-callScene:review_miss.txt -ans=凤姐站在里面招手叫他;
+callScene:review_miss.txt -ans=第一回的“假作真时真亦假，无为有处有还无”;
 label:r2_r;
 
-; R3 第13回 秦可卿临别赠言；干扰项均出自第1回
-空空道人:【回顾三 +2】秦可卿临别赠凤姐两句：“三春去后诸芳尽”，下一句是——;
-choose:便是烟消火灭时:r3_x|各自须寻各自门:r3_o|反认他乡是故乡:r3_y;
+; R3 人物性格：凤姐三件事，分辨公务、接济与弄权（第6回、第14回幕间、第15回解读）
+空空道人:【回顾三 +2】同样是凤姐的手段，哪一件是借贾府权势谋取私利？;
+choose:给刘姥姥二十两银子，另拿一吊钱雇车:r3_x|受净虚之托修书压人，收下三千两:r3_o|协理宁国府，把来迟的人打二十板子:r3_y;
 label:r3_o;
 callScene:review_hit.txt;
 jumpLabel:r3_r;
 label:r3_x;
-callScene:review_miss.txt -ans=各自须寻各自门;
+callScene:review_miss.txt -ans=馒头庵受托修书，收下三千两;
 jumpLabel:r3_r;
 label:r3_y;
-callScene:review_miss.txt -ans=各自须寻各自门;
+callScene:review_miss.txt -ans=馒头庵受托修书，收下三千两;
 label:r3_r;
 changeScene:ending.txt;

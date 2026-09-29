@@ -1,93 +1,132 @@
-; 第一幕 缘起（第1–5回）：节点1 还泪、节点2 摔玉、节点3 护官符（回顾一）、节点4 判词
+; 第一幕 缘起（第1–5回）：节点编号即回目。节点1 还泪、节点2 冷子兴演说、节点3 摔玉、节点4 护官符、节点5 判词
+; 幕间「假作真时真亦假」是回顾二的伏笔
 intro:第一幕　缘起|第一回至第五回 -delayTime=500 -fontSize=large -backgroundColor=rgba(20,18,16,0.82) -fontColor=rgba(243,237,226,1);
 
 ; ===== 节点1 第1回 绛珠仙草 易 =====
 changeBg:linghe.webp -next;
-:【第一回 · 你是绛珠仙草 · 易 +1】神瑛侍者日以甘露灌溉，你才得久延岁月。如今他要下凡了——你如何报答？;
-choose:炼一粒仙丹相赠，从此两不相欠:n1_b|随他下世为人，把一生所有的眼泪还他:n1_a|化作一块美玉，日日伴在他身边:n1_c;
+:【第一回 · 你是绛珠仙草 · 易 +1】神瑛侍者“日以甘露灌溉”，你才修成女体。如今他要下凡——这份恩，你拿什么还？;
+choose:寻一滴甘露还他，两不相欠:n1_b|随他下世，把一生的眼泪还他:n1_a|留在灵河，等他归来:n1_c;
 label:n1_a;
 callScene:hit.txt -pts=1;
 jumpLabel:n1_r;
 label:n1_b;
-平行世界:恩情两清，便没有后来的眼泪，也就没有这部书了。;
-callScene:miss.txt;
+setVar:pw1=1;
+callScene:pw.txt -pw=恩情两清，便没有后来的眼泪，也就没有这部书了。;
 jumpLabel:n1_r;
 label:n1_c;
-平行世界:「金玉」之说另有其人。绛珠要还的，是眼泪。;
-callScene:miss.txt;
+setVar:pw1=2;
+callScene:pw.txt -pw=她留在天上，他去了人间，木与石再不相逢。;
 label:n1_r;
+changeFigure:daiyu_tearful.webp -enter=dream-in -exit=dream-out -next;
 石上原文:他既下世为人，我也去下世为人，但把我一生所有的眼泪还他，也偿还得过他了。;
-解读:绛珠是黛玉的前身，神瑛侍者是宝玉的前身——这便是「木石前盟」。;
+解读:绛珠、神瑛是黛玉、宝玉的前身，即「木石前盟」。以泪还恩，为黛玉一生定了调。;
+changeFigure:none -next;
 
-; ----- 幕间：第1–2回 -----
+; ----- 幕间：第1回 -----
 changeBg:qinggeng.webp -next;
-:顽石随一僧一道入了红尘。甄士隐梦中见太虚幻境对联：“假作真时真亦假，无为有处有还无。”;
-:士隐资助贾雨村进京赶考；后来女儿英莲走失，自己随跛足道人出家。;
-:雨村后来做了黛玉的西宾。冷子兴向他「演说荣国府」，说宝玉讲过：“女儿是水作的骨肉，男人是泥作的骨肉。”;
+:甄士隐梦见太虚幻境对联：“假作真时真亦假，无为有处有还无。”;
 
-; ===== 节点2 第3回 贾宝玉 易 =====
-changeBg:rongfu.webp -next;
-changeFigure:baoyu.webp -left -next;
-changeFigure:daiyu.webp -right -next;
-:黛玉进府，“步步留心，时时在意”。凤姐未见其人，先闻其声：“我来迟了，不曾迎接远客！”;
-:【第三回 · 你是贾宝玉 · 易 +1】宝玉一见黛玉便笑：“这个妹妹我曾见过的。”又问她可也有玉。;
-林黛玉:我没有那个。想来那玉是一件罕物，岂能人人有的。;
-choose:摘下那玉，狠命摔去:n2_b|暗暗得意，果然只有自己与众不同:n2_a|解下玉来，要送给妹妹戴:n2_c;
-label:n2_b;
-callScene:hit.txt -pts=1;
+; ===== 节点2 第2回 贾雨村 中 =====
+; 干扰项：附和冷子兴（顺着说）、抓周作不得准（常识之见）；雨村偏要「罕然厉色」驳他
+changeBg:tavern.webp -next;
+changeFigure:lengzixing.webp -right -next;
+changeFigure:yucun.webp -left -enter=walk-in-left -next;
+:【第二回 · 你是贾雨村 · 中 +2】你革职闲游，在村肆遇见古董商冷子兴，听他演说荣国府：“如今外面的架子虽未甚倒，内囊却也尽上来了。”;
+changeFigureDiff:lengzixing_gossip.webp -right -next;
+setAnimation:laugh -target=fig-right -next;
+冷子兴:……他说：‘女儿是水作的骨肉，男人是泥作的骨肉。’……将来色鬼无疑了！;
+choose:附和他：贾府后继无人了:n2_a|劝他：抓周当不得真，大了自会改:n2_b|驳他：此等人物，不可以寻常贤愚论:n2_c;
+label:n2_c;
+callScene:hit.txt -pts=2;
 jumpLabel:n2_r;
 label:n2_a;
-平行世界:暗自得意？宝玉从来不稀罕这块「通灵」。;
-callScene:miss.txt;
+setVar:pw2=1;
+callScene:pw.txt -pw=顺口附和？雨村最爱在人前显出见识高人一等。;
 jumpLabel:n2_r;
-label:n2_c;
-平行世界:把「命根子」挂到妹妹颈上？满屋子的人怕是要吓坏了。;
-callScene:miss.txt;
+label:n2_b;
+setVar:pw2=2;
+callScene:pw.txt -pw=一句常理轻轻带过？雨村偏要借宝玉发一篇大议论。;
 label:n2_r;
-石上原文:宝玉……摘下那玉，就狠命摔去，骂道：“什么罕物……我也不要这劳什子了！”;
-解读:姐妹们都没有，偏他有——宝玉摔的，是这块把他与众人隔开的「通灵」。;
+changeFigureDiff:yucun_earnest.webp -left -next;
+setAnimation:approach-right -target=fig-left -next;
+石上原文:雨村罕然厉色忙止道：“非也！可惜你们不知道这人来历。大约政老前辈也错以淫魔色鬼看待了。……”;
+changeFigureDiff:lengzixing.webp -right -next;
+解读:雨村说宝玉这等人秉「正邪两赋」之气，不可以常理论。高论说得漂亮，两回之后，他在公堂上徇情枉法。;
 changeFigure:none -left -next;
 changeFigure:none -right -next;
 
-; ===== 节点3 第4回 贾雨村 中 =====
-changeBg:court.webp -next;
-changeFigure:yucun.webp -next;
-:【第四回 · 你是贾雨村 · 中 +2】雨村补授应天府，遇上薛蟠为争买丫头打死冯渊的官司。门子递上一张「护官符」：;
-intro:贾不假，白玉为堂金作马。|阿房宫，三百里，|住不下金陵一个史。|东海缺少白玉床，|龙王来请金陵王。|丰年好大雪，|珍珠如土金如铁。 -delayTime=450 -fontSize=small -hold -backgroundColor=rgba(20,18,16,0.82) -fontColor=rgba(243,237,226,1);
-门子:这四家皆连络有亲，一损皆损，一荣皆荣……今告打死人之薛，就系丰年大雪之‘雪’也。;
-:门子又说，那被卖的丫头“就是葫芦庙旁住的甄老爷的小姐，名唤英莲的”。;
-choose:秉公执法，捉拿薛蟠:n3_a|挂印辞官，谁也不得罪:n3_b|徇情枉法，胡乱判断了此案:n3_c;
-label:n3_c;
-callScene:hit.txt -pts=2;
+; ===== 节点3 第3回 贾宝玉 易 =====
+changeBg:rongfu.webp -next;
+changeFigure:daiyu.webp -right -enter=walk-in-right -next;
+changeFigure:baoyu_smile.webp -left -enter=walk-in-left -next;
+setAnimation:startle -target=fig-right -next;
+:【第三回 · 你是贾宝玉 · 易 +1】黛玉初进荣府。宝玉一见便说“这个妹妹我曾见过的”，又问她可有玉。;
+林黛玉:我没有那个。想来那玉是一件罕物，岂能人人有的。;
+choose:摘下那玉，狠命摔去:n3_b|悄悄把玉掖回衣襟:n3_a|解下玉来送给妹妹:n3_c;
+label:n3_b;
+callScene:hit.txt -pts=1;
 jumpLabel:n3_r;
 label:n3_a;
-平行世界:四大家族一损皆损——真要秉公，雨村的乌纱帽先保不住。;
-callScene:miss.txt;
+setVar:pw3=1;
+callScene:pw.txt -pw=藏起「通灵」倒清净，可宝玉偏嫌它把人分出高低。;
 jumpLabel:n3_r;
-label:n3_b;
-平行世界:雨村好不容易才起复，怎舍得这顶乌纱？;
-callScene:miss.txt;
+label:n3_c;
+setVar:pw3=2;
+callScene:pw.txt -pw=把「命根子」挂到妹妹颈上？满屋子的人怕要吓坏了。;
 label:n3_r;
-石上原文:雨村便徇情枉法，胡乱判断了此案。;
-解读:明知英莲是恩人之女，雨村仍向贾、史、王、薛四大家族低头。;
-changeFigure:none -next;
+changeFigureDiff:baoyu_angry.webp -left -next;
+setAnimation:fling -target=fig-left -next;
+setAnimation:recoil-right -target=fig-right -next;
+石上原文:宝玉……就狠命摔去，骂道：“什么罕物，连人之高低不择，还说‘通灵’不‘通灵’呢！我也不要这劳什子了！”;
+changeFigureDiff:daiyu_tearful.webp -right -next;
+解读:众人的「命根子」，宝玉却嫌它分出人的高低。初来的黛玉，当晚为此垂泪。;
+changeFigure:none -left -next;
+changeFigure:none -right -next;
 
-; ===== 节点4 第5回 贾宝玉 难 =====
-changeBg:taixu.webp -next;
-changeFigure:jinghuan.webp -right -next;
-:【第五回 · 你是贾宝玉 · 难 +3】宝玉梦入太虚幻境「薄命司」。金陵十二钗正册头一页，画着枯木上悬着玉带、雪下埋着金簪：;
-intro:可叹停机德，堪怜咏絮才。|玉带林中挂，金簪雪里埋。 -delayTime=800 -hold -backgroundColor=rgba(20,18,16,0.82) -fontColor=rgba(243,237,226,1);
-:这首判词，说的是哪两位？;
-choose:贾元春与贾探春:n4_a|林黛玉与薛宝钗:n4_b|史湘云与王熙凤:n4_c;
-label:n4_b;
-callScene:hit.txt -pts=3;
+; ===== 节点4 第4回 贾雨村 中 =====
+changeBg:court.webp -next;
+changeFigure:yucun.webp -enter=walk-in-right -next;
+:【第四回 · 你是贾雨村 · 中 +2】雨村初到应天府，接了命案：薛家公子争买丫头，打死冯渊。雨村大怒：“岂有这样放屁的事！”正要发签，门子递上「护官符」：;
+changeFigureDiff:yucun_ponder.webp -next;
+intro:贾不假，白玉为堂金作马。|阿房宫，三百里，|住不下金陵一个史。|东海缺少白玉床，|龙王来请金陵王。|丰年好大雪，|珍珠如土金如铁。 -delayTime=450 -fontSize=small -hold -backgroundColor=rgba(20,18,16,0.82) -fontColor=rgba(243,237,226,1);
+门子:这四家皆连络有亲，一损皆损，一荣皆荣，扶持遮饰，俱有照应的。;
+setAnimation:startle -target=fig-center -next;
+:门子还认出，那被卖的丫头正是雨村恩人甄士隐之女英莲。;
+choose:发签拿薛家，救回英莲:n4_a|推说凶犯在逃，压着不审:n4_b|赔冯家烧埋银子，胡乱结案:n4_c;
+label:n4_c;
+callScene:hit.txt -pts=2;
 jumpLabel:n4_r;
 label:n4_a;
-callScene:miss.txt;
+setVar:pw4=1;
+callScene:pw.txt -pw=真要秉公，雨村的乌纱帽先保不住。;
 jumpLabel:n4_r;
-label:n4_c;
-callScene:miss.txt;
+label:n4_b;
+setVar:pw4=2;
+callScene:pw.txt -pw=一拖了之？贾、王、薛三家都等他回话，拖不起。;
 label:n4_r;
-解读:「停机德」用乐羊子妻的典故赞宝钗，「咏絮才」用谢道韫的典故赞黛玉；「玉带林」倒读即「林黛玉」，「雪」谐「薛」。;
+changeFigureDiff:yucun_sly.webp -next;
+石上原文:雨村便徇情枉法，胡乱判断了此案。;
+解读:明知英莲是恩人之女，雨村仍向四大家族低头。堂上的怒喝，敌不过一张护官符。;
+changeFigure:none -next;
+
+; ===== 节点5 第5回 贾宝玉 难 =====
+changeBg:taixu.webp -next;
+changeFigure:jinghuan.webp -right -enter=dream-in -exit=dream-out -next;
+:【第五回 · 你是贾宝玉 · 难 +3】宝玉梦游太虚幻境，翻开金陵十二钗正册，头一页：;
+changeFigureDiff:jinghuan_point.webp -right -next;
+intro:可叹停机德，谁怜咏絮才。|玉带林中挂，金簪雪里埋。 -delayTime=800 -hold -backgroundColor=rgba(20,18,16,0.82) -fontColor=rgba(243,237,226,1);
+:这一页合写黛玉、宝钗。「可叹停机德」叹的是谁？;
+choose:林黛玉:n5_a|薛宝钗:n5_b|两人都是:n5_c;
+label:n5_b;
+callScene:hit.txt -pts=3;
+jumpLabel:n5_r;
+label:n5_a;
+callScene:miss.txt;
+jumpLabel:n5_r;
+label:n5_c;
+callScene:miss.txt;
+label:n5_r;
+changeFigureDiff:jinghuan.webp -right -next;
+解读:「玉带林」倒读是林黛玉，「雪」谐薛。「停机德」用乐羊子妻停机劝夫之典，叹宝钗之贤；「咏絮才」用谢道韫咏雪之典，怜黛玉之才。;
 changeFigure:none -right -next;
 changeScene:act2.txt;

@@ -10,13 +10,13 @@
 
   const load = () => {
     try {
-      return JSON.parse(sessionStorage.getItem(KEY)) ?? {};
+      return JSON.parse(localStorage.getItem(KEY)) ?? {};
     } catch {
       return {};
     }
   };
   let state = { phase: 'idle', t0: 0, t1: 0, score: 0, sawTitle: false, ...load() };
-  const save = () => sessionStorage.setItem(KEY, JSON.stringify(state));
+  const save = () => localStorage.setItem(KEY, JSON.stringify(state));
 
   const hud = document.createElement('div');
   hud.id = 'hlm-hud';
@@ -77,7 +77,7 @@
   const inspect = () => {
     const text = dialogueText();
     if (!text) return;
-    // 回到标题再开新局会重新出现开始标记，重新计时；刷新页面后「继续游戏」不会出现开始标记，计时延续。
+    // 回到标题再开新局会重新出现开始标记，重新计时；刷新或关掉页面后「继续游戏」不会出现开始标记，计时延续。
     if (text.includes(START) && (state.phase !== 'running' || state.sawTitle)) {
       state = { phase: 'running', t0: Date.now(), t1: 0, score: 0, sawTitle: false };
       save();

@@ -1,0 +1,82 @@
+[
+ {
+  "alpha": 0,
+  "position": {
+   "x": -620,
+   "y": 0
+  },
+  "duration": 0
+ },
+ {
+  "alpha": 0.35,
+  "position": {
+   "x": -542,
+   "y": -12
+  },
+  "duration": 130,
+  "ease": "easeInOut"
+ },
+ {
+  "alpha": 0.7,
+  "position": {
+   "x": -465,
+   "y": 0
+  },
+  "duration": 130,
+  "ease": "easeInOut"
+ },
+ {
+  "alpha": 1,
+  "position": {
+   "x": -388,
+   "y": -12
+  },
+  "duration": 130,
+  "ease": "easeInOut"
+ },
+ {
+  "alpha": 1,
+  "position": {
+   "x": -310,
+   "y": 0
+  },
+  "duration": 130,
+  "ease": "easeInOut"
+ },
+ {
+  "alpha": 1,
+  "position": {
+   "x": -232,
+   "y": -12
+  },
+  "duration": 130,
+  "ease": "easeInOut"
+ },
+ {
+  "alpha": 1,
+  "position": {
+   "x": -155,
+   "y": 0
+  },
+  "duration": 130,
+  "ease": "easeInOut"
+ },
+ {
+  "alpha": 1,
+  "position": {
+   "x": -78,
+   "y": -12
+  },
+  "duration": 130,
+  "ease": "easeInOut"
+ },
+ {
+  "alpha": 1,
+  "position": {
+   "x": 0,
+   "y": 0
+  },
+  "duration": 130,
+  "ease": "easeInOut"
+ }
+]

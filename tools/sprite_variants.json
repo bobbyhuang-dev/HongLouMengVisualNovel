@@ -1,0 +1,160 @@
+{
+  "_comment": "立绘差分：每个角色的表情/动作。用这里的描述让图像模型（fal.ai gpt-image-2.5-sunburst，见 tools/fal_image.py）从 art/sprites/<角色>.png 改画出 art/sprites/<角色>_<差分>.png。",
+  "characters": {
+    "kongkong": {
+      "who": "Kongkong the Taoist, an old man with a long white beard holding a book and a horsetail whisk",
+      "variants": {
+        "smile": "kindly amused smile with creased eyes, one hand stroking his long white beard",
+        "ask": "earnest questioning look, eyebrows raised, leaning slightly forward, holding the book open toward the viewer as if quizzing them"
+      }
+    },
+    "baoyu": {
+      "who": "Jia Baoyu, a handsome teenage young master",
+      "variants": {
+        "smile": "delighted warm smile, bright eyes, head tilted with curious fondness, as if meeting someone he feels he has known before",
+        "angry": "sudden outburst of anger, brows knitted, mouth open shouting, one arm raised high about to hurl down a jade pendant held in his fist",
+        "timid": "nervous and cowed, head lowered, shoulders hunched, hands clasped respectfully in front, eyes glancing up warily as before a strict father",
+        "proud": "eager and confident, one hand raised in an elegant gesture as if proposing a clever idea, bright animated face",
+        "tearful": "grief-stricken, tears streaming down his cheeks, brows knit in anguish, both hands reaching forward as if grasping a dying friend's hand"
+      }
+    },
+    "daiyu": {
+      "who": "Lin Daiyu, a delicate, frail young lady",
+      "variants": {
+        "sneer": "cold proud little sneer, chin slightly raised, half-lidded eyes glancing sideways with disdain, one corner of the lips curled, handkerchief held at her waist",
+        "smile": "playful teasing smile, sparkling eyes, lightly covering her mouth with a handkerchief as she laughs",
+        "tearful": "sorrowful, eyes brimming with tears, brows knit, dabbing a tear with a handkerchief, head bowed slightly"
+      }
+    },
+    "baochai": {
+      "who": "Xue Baochai, a composed, graceful young lady",
+      "variants": {
+        "smile": "gentle composed knowing smile, calm warm eyes, one hand raised slightly as if giving kind advice",
+        "shy": "demure embarrassment, eyes lowered, faint blush, head turned slightly away, fingers touching a golden locket at her chest",
+        "stern": "mild but firm reproof, calm composed face with a slight frown, eyes glancing sideways sternly, one hand raised slightly as if checking a servant"
+      }
+    },
+    "fengjie": {
+      "who": "Wang Xifeng, a glamorous, sharp-witted young matron",
+      "variants": {
+        "smile": "bright laughing smile, charismatic and gracious, one hand raised holding a handkerchief as she laughs",
+        "scheme": "sly cold smile, eyes narrowed and calculating, one corner of the mouth curled, hands tucked into her sleeves",
+        "stern": "imperious and severe, sharp brows, chin up, fierce eyes, pointing a finger in command",
+        "troubled": "startled and uneasy, eyes wide, brows knit with worry, one hand pressed to her chest"
+      }
+    },
+    "laolao": {
+      "who": "Granny Liu, a poor, stooped old country woman",
+      "variants": {
+        "plead": "humble awkward smile, bowing slightly, both hands clasped in front in supplication",
+        "joy": "overjoyed grin with crinkled eyes, both hands raised together in thanks"
+      }
+    },
+    "yucun": {
+      "who": "Jia Yucun, an ambitious official",
+      "variants": {
+        "ponder": "hesitating and calculating, brows furrowed, one hand stroking his beard, eyes looking aside",
+        "sly": "self-serving sly smile, shifty eyes, one hand making a small dismissive wave",
+        "earnest": "suddenly grave and earnest, eyebrows raised sternly, one hand raised palm-out to cut the other speaker short, as if declaring 'Not so!' and about to lecture"
+      }
+    },
+    "jinghuan": {
+      "who": "the Goddess of Disenchantment, an ethereal immortal lady",
+      "variants": {
+        "point": "serene mysterious look, one hand extended gracefully as if presenting a register beside her"
+      }
+    },
+    "jiarui": {
+      "who": "Jia Rui, a young scholar",
+      "variants": {
+        "leer": "lecherous fawning grin, eyes staring fixedly, leaning forward, rubbing his hands together"
+      }
+    },
+    "keqing": {
+      "who": "Qin Keqing, a beautiful young lady appearing as a ghost in a dream",
+      "variants": {
+        "sorrow": "grave, sorrowful and ethereal, melancholy eyes, one hand raised in a solemn warning"
+      }
+    },
+    "jingxu": {
+      "who": "Abbess Jingxu, an elderly Buddhist nun",
+      "variants": {
+        "wheedle": "wheedling ingratiating smile, crafty eyes, leaning forward, palms pressed together"
+      }
+    },
+    "jiazheng": {
+      "who": "Jia Zheng, a strict middle-aged official and father",
+      "variants": {
+        "scold": "stern and angry, glaring, brows furrowed, pointing a finger to scold",
+        "nod": "grudgingly approving, faint restrained smile, hands behind his back, slight nod"
+      }
+    },
+    "yuanchun": {
+      "who": "Jia Yuanchun, the Imperial Consort in palace attire",
+      "variants": {
+        "tearful": "weeping quietly, eyes red with tears, a handkerchief raised to her eye, sorrowful yet dignified"
+      }
+    },
+    "xiangyun": {
+      "who": "Shi Xiangyun, a cheerful, tomboyish young lady",
+      "variants": {
+        "laugh": "hearty open laugh, eyes squeezed happily, hands raised in excitement",
+        "pout": "playful pout, cheeks puffed, brows raised, hands on hips as if complaining"
+      }
+    },
+    "lengzixing": {
+      "who": "Leng Zixing, a worldly antique dealer from the capital",
+      "variants": {
+        "gossip": "gleeful gossiping grin, eyes narrowed with amusement, leaning slightly forward, one finger raised and wagging as if relating a juicy scandal, the wine cup still in the other hand"
+      }
+    },
+    "jiaqiang": {
+      "who": "Jia Qiang, a handsome foppish young master",
+      "variants": {
+        "sly": "sly scheming half-smile, eyes glancing sideways, the closed folding fan raised beside his mouth as if whispering instigation"
+      }
+    },
+    "mingyan": {
+      "who": "Mingyan, a brash page boy servant",
+      "variants": {
+        "fierce": "fierce and belligerent, mouth wide open shouting, brows knit, one fist raised and the other hand pointing forward aggressively, charging stance"
+      }
+    },
+    "jinshi": {
+      "who": "Madam Huang (nee Jin), a woman from a poor branch of the clan",
+      "variants": {
+        "angry": "indignant and huffy, brows knit, lips pressed, chin raised, one hand clutching a handkerchief firmly as if storming off to demand justice",
+        "fawn": "deflated and ingratiating, awkward placating smile, shoulders lowered, head slightly bowed, hands clasped meekly"
+      }
+    },
+    "qinzhong": {
+      "who": "Qin Zhong, a delicate handsome boy",
+      "variants": {
+        "ill": "gravely ill and dying: deathly pale waxen face, eyes half-closed and dim, hair loosened, wearing only a plain white inner robe with a grey quilt-like wrap over the shoulders, body sagging weakly"
+      }
+    },
+    "xiren": {
+      "who": "Hua Xiren, a gentle senior maidservant",
+      "variants": {
+        "firm": "feigning cool resolve, face turned slightly away, eyes lowered, lips set firmly, hands folded, as if saying 'my mind is made up'",
+        "smile": "tender coaxing smile, head tilted, one hand raised gently with a finger lifted as if listing conditions one by one"
+      }
+    },
+    "jiahuan": {
+      "who": "Jia Huan, a sulky boy, son of a concubine",
+      "variants": {
+        "cry": "bawling resentfully, face screwed up with tears, one sleeve raised to wipe his eyes, the other fist clenched"
+      }
+    },
+    "yinger": {
+      "who": "Ying'er, a pert maidservant",
+      "variants": {
+        "pout": "aggrieved pout, cheeks puffed, lips pushed out, eyes cast down sulkily, both hands fiddling with her sleeve"
+      }
+    },
+    "beijingwang": {
+      "who": "Shui Rong, the Prince of Beijing, a handsome graceful young prince in a white python robe",
+      "variants": {}
+    }
+  }
+}

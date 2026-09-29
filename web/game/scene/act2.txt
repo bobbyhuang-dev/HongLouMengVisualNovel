@@ -1,101 +1,183 @@
-; 第二幕 暗流（第6–12回）：节点5 刘姥姥、节点6 宫花、节点7 金锁、节点8 贾瑞
+; 第二幕 暗流（第6–12回）：节点6 刘姥姥、节点7 宫花、节点8 金锁、节点9 闹学堂、节点10 璜大奶奶、节点11 贾瑞、节点12 人参与风月宝鉴（回顾二出自这里）
 intro:第二幕　暗流|第六回至第十二回 -delayTime=500 -fontSize=large -backgroundColor=rgba(20,18,16,0.82) -fontColor=rgba(243,237,226,1);
 
-; ===== 节点5 第6回 王熙凤 易 =====
+; ===== 节点6 第6回 王熙凤 易 =====
 changeBg:fengjie_room.webp -next;
-changeFigure:laolao.webp -left -next;
 changeFigure:fengjie.webp -right -next;
-:【第六回 · 你是王熙凤 · 易 +1】刘姥姥家中冬事未办，带着板儿来荣国府找门路：;
-刘姥姥:……只因他老子娘在家里，连吃的都没有。如今天又冷了……只得带了你侄儿奔了你老来。;
-choose:推说府中艰难，一文不给，客客气气请她回去:n5_a|一出手就是一百两，显显贾府的气派:n5_c|给二十两银子，另拿一吊钱雇车:n5_b;
-label:n5_b;
-callScene:hit.txt -pts=1;
-jumpLabel:n5_r;
-label:n5_a;
-平行世界:叫远亲空手而回，传出去丢的是荣国府的脸——凤姐最讲体面。;
-callScene:miss.txt;
-jumpLabel:n5_r;
-label:n5_c;
-平行世界:一百两？凤姐精明得很，嘴上还要叹一声“大有大的艰难去处”呢。;
-callScene:miss.txt;
-label:n5_r;
-石上原文:凤姐乃道：“这是二十两银子，暂且给这孩子做件冬衣罢。……这钱雇车坐罢。”;
-解读:既顾全体面，又不多给——凤姐的精明全在这二十两里。;
-changeFigure:none -left -next;
-changeFigure:none -right -next;
-
-; ===== 节点6 第7回 林黛玉 中 =====
-changeBg:inner_room.webp -next;
-changeFigure:daiyu.webp -next;
-:【第七回 · 你是林黛玉 · 中 +2】周瑞家的替薛姨妈送宫花，一路送下来，最后才到黛玉。;
-林黛玉:还是单送我一人的，还是别的姑娘们都有呢？;
-周瑞家的:各位都有了，这两枝是姑娘的了。;
-choose:“我就知道，别人不挑剩下的也不给我。”:n6_a|“多谢姨妈惦记，替我道个谢罢。”:n6_b|“我不爱这些，转送给雪雁戴罢。”:n6_c;
-label:n6_a;
-callScene:hit.txt -pts=2;
-jumpLabel:n6_r;
+changeFigure:laolao_plead.webp -left -enter=walk-in-left -exit=walk-out-left -next;
+setAnimation:bow -target=fig-left -next;
+:【第六回 · 你是王熙凤 · 易 +1】刘姥姥家冬事未办，来荣府求告。王夫人只嘱咐“也不可简慢了他”。;
+choose:两件旧棉衣、一袋米:n6_a|五十两银子、两匹尺头:n6_c|二十两银子、一吊车钱:n6_b;
 label:n6_b;
-平行世界:这般客气周全，倒像宝钗的做派了。;
-callScene:miss.txt;
+callScene:hit.txt -pts=1;
+jumpLabel:n6_r;
+label:n6_a;
+setVar:pw6=1;
+callScene:pw.txt -pw=旧衣一袋米？太太刚嘱咐“不可简慢”，凤姐最讲体面。;
 jumpLabel:n6_r;
 label:n6_c;
-平行世界:黛玉并非不在意宫花，她在意的是自己被排在了最后。;
-callScene:miss.txt;
+setVar:pw6=2;
+callScene:pw.txt -pw=五十两？凤姐嘴上还要叹一声“大有大的艰难去处”呢。;
 label:n6_r;
-石上原文:黛玉冷笑道：“我就知道，别人不挑剩下的也不给我。”;
-解读:一声冷笑，见出黛玉的敏感，底下是寄人篱下的自尊。;
-changeFigure:none -next;
+changeFigureDiff:fengjie_smile.webp -right -next;
+石上原文:凤姐乃道：“这是二十两银子，暂且给这孩子做件冬衣罢。……这钱雇车坐罢。”;
+changeFigureDiff:laolao_joy.webp -left -next;
+setAnimation:bow -target=fig-left -next;
+刘姥姥:凭他怎样，你老拔根寒毛比我们的腰还粗呢！;
+解读:给丫头们做衣裳的钱，够刘姥姥一家过冬。凤姐的分寸之外，是贫富之隔。;
+changeFigure:none -left -next;
+changeFigure:none -right -next;
 
-; ===== 节点7 第8回 薛宝钗 难 =====
-changeBg:lixiang.webp -next;
-changeFigure:baoyu.webp -left -next;
-changeFigure:baochai.webp -right -next;
-:【第八回 · 你是薛宝钗 · 难 +3】宝玉到梨香院探病。宝钗托着通灵宝玉，念道：“莫失莫忘，仙寿恒昌。”;
-莺儿:我听这两句话，倒像和姑娘的项圈上的两句话是一对儿。;
-:宝钗金锁上錾的，是哪八个字？;
-choose:长命百岁，富贵千秋:n7_a|不离不弃，芳龄永继:n7_b|莫离莫弃，福寿永昌:n7_c;
-label:n7_b;
-callScene:hit.txt -pts=3;
-jumpLabel:n7_r;
+; ===== 节点7 第7回 林黛玉 中 =====
+changeBg:inner_room.webp -next;
+changeFigure:daiyu.webp -next;
+:【第七回 · 你是林黛玉 · 中 +2】周瑞家的替薛姨妈送宫花，在薛家见了小丫头香菱——就是当年引出人命官司的那个丫头。宫花一路送下来，最后才到你手里。;
+周瑞家的:各位都有了，这两枝是姑娘的了。;
+choose:“别人不挑剩下的也不给我。”:n7_a|“替我谢谢姨妈。”:n7_b|“转送给雪雁戴罢。”:n7_c;
 label:n7_a;
-callScene:miss.txt;
+callScene:hit.txt -pts=2;
+jumpLabel:n7_r;
+label:n7_b;
+setVar:pw7=1;
+callScene:pw.txt -pw=这般客气周全，倒像宝钗的做派了。;
 jumpLabel:n7_r;
 label:n7_c;
-callScene:miss.txt;
+setVar:pw7=2;
+callScene:pw.txt -pw=黛玉在意的不是宫花，是自己被排在了最后。;
 label:n7_r;
-石上原文:果然一面有四个篆字，两面八字，共成两句吉谶：不离不弃，芳龄永继。;
-解读:玉上与锁上的字恰成一对，「金玉良缘」由此点出。话犹未了，黛玉走来笑道：“嗳哟，我来的不巧了！”;
-changeFigure:none -left -next;
-changeFigure:none -right -next;
+changeFigureDiff:daiyu_sneer.webp -next;
+setAnimation:turn-away -target=fig-center -keep -next;
+石上原文:黛玉冷笑道：“我就知道，别人不挑剩下的也不给我。”——周瑞家的未必有意怠慢，这声冷笑底下，是寄人篱下、怕被看轻的自尊。;
+changeFigure:none -next;
 
-; ----- 幕间：第9–10回 -----
-:宝玉与秦钟同入家塾，闹出一场「顽童闹学堂」。不久，秦可卿一病不起。;
-
-; ===== 节点8 第11回 王熙凤 中 =====
-changeBg:huifang.webp -next;
-changeFigure:jiarui.webp -left -next;
-changeFigure:fengjie.webp -right -next;
-:【第十一回 · 你是王熙凤 · 中 +2】贾敬寿辰，凤姐穿过会芳园，贾瑞忽从假山石后走来——;
-贾瑞:也是合该我与嫂子有缘。……不想就遇见嫂子也从这里来。这不是有缘么？;
-:一面说着，一面拿眼睛不住的觑着凤姐儿。;
-choose:当场翻脸，喝令他滚开，再去告诉贾珍:n8_a|躲回房中，从此避而不见:n8_b|假意含笑应承，暗中起意惩治:n8_c;
-label:n8_c;
-callScene:hit.txt -pts=2;
+; ===== 节点8 第8回 贾宝玉 难 =====
+changeBg:lixiang.webp -next;
+changeFigure:baochai.webp -right -next;
+changeFigure:baoyu.webp -left -enter=walk-in-left -next;
+:【第八回 · 你是贾宝玉 · 难 +3】通灵玉上是“莫失莫忘，仙寿恒昌”，莺儿说和宝钗金锁上的是一对儿。锁上是哪八个字？;
+changeFigureDiff:baochai_shy.webp -right -next;
+choose:长命百岁，富贵千秋:n8_a|不离不弃，芳龄永继:n8_b|莫离莫弃，福寿永昌:n8_c;
+label:n8_b;
+callScene:hit.txt -pts=3;
 jumpLabel:n8_r;
 label:n8_a;
-平行世界:当场翻脸固然痛快，可凤姐要的，是叫他尝尝自己的手段。;
 callScene:miss.txt;
 jumpLabel:n8_r;
-label:n8_b;
-平行世界:躲？凤姐从来不是躲事的人。;
+label:n8_c;
 callScene:miss.txt;
 label:n8_r;
-石上原文:凤姐……见他去远了，心里暗忖道：“……几时叫他死在我的手里，他才知道我的手段！”;
+changeFigureDiff:baoyu_smile.webp -left -next;
+setAnimation:approach-right -target=fig-left -next;
+changeFigure:daiyu.webp -enter=walk-in-right -next;
+changeFigureDiff:baoyu_timid.webp -left -next;
+setAnimation:startle -target=fig-left -next;
+林黛玉:嗳哟，我来的不巧了！;
+解读:锁上“不离不弃，芳龄永继”，与玉上八字恰成一对。「金玉」对「木石」，由此点出。;
 changeFigure:none -left -next;
+changeFigure:none -next;
 changeFigure:none -right -next;
 
-; ----- 第12回（回顾二出自这里） -----
-:凤姐「毒设相思局」，贾瑞冻了一夜、又被敲诈，一病不起。跛足道人送来「风月宝鉴」，嘱他只照背面。;
+; ===== 节点9 第9回 贾蔷 中 =====
+; 干扰项：当众出头（得罪薛蟠）、禀告贾珍（惊动长辈）；贾蔷要的是「又止息口声，又伤不了脸面」
+changeBg:school.webp -next;
+changeFigure:jiaqiang.webp -left -enter=walk-in-left -exit=walk-out-left -next;
+:【第九回 · 你是贾蔷 · 中 +2】代儒不在，贾瑞管学。金荣当众拿秦钟说些不干不净的话，贾瑞反倒偏袒他。秦钟是你好友贾蓉的小舅子，可金荣、贾瑞都是薛蟠的相知——;
+choose:当众喝住金荣，替秦钟出头:n9_a|借故出去，悄悄调拨茗烟出头:n9_b|回去禀告贾珍，请他来发落:n9_c;
+label:n9_b;
+callScene:hit.txt -pts=2;
+jumpLabel:n9_r;
+label:n9_a;
+setVar:pw9=1;
+callScene:pw.txt -pw=自己出头，便要得罪薛蟠；贾蔷不肯伤了这份和气。;
+jumpLabel:n9_r;
+label:n9_c;
+setVar:pw9=2;
+callScene:pw.txt -pw=惊动贾珍，谣言反倒传开；贾蔷要的是不露面就了事。;
+label:n9_r;
+changeFigureDiff:jiaqiang_sly.webp -left -next;
+石上原文:贾蔷……想道：“……倘或我一出头，他们告诉了老薛，我们岂不伤和气？……如今何不用计制伏，又止息口声，又伤不了脸面。”;
+changeFigure:mingyan_fierce.webp -right -enter=rush-in-right -next;
+茗烟:姓金的，你是什么东西！;
+changeFigure:none -left -next;
+setAnimation:scuffle -target=fig-right -next;
+解读:贾蔷说声“是时候了”先走一步，砚瓦随即乱飞，末了金荣给秦钟磕了头。家塾里比的，是谁的靠山硬。;
+changeFigure:none -right -next;
+
+; ===== 节点10 第10回 璜大奶奶 中 =====
+; 干扰项：当面理论（她家要靠宁府照应）、去找凤姐（金荣的学额本是求凤姐得的）
+changeBg:ningfu.webp -next;
+changeFigure:jinshi_angry.webp -left -enter=walk-in-left -next;
+:【第十回 · 你是璜大奶奶 · 中 +2】侄儿金荣在学里受了气。嫂子急得求你别去：闹起来荣儿站不住，家里可请不起先生。你偏坐车直奔宁府，要找秦可卿理论——;
+尤氏:今儿听见有人欺负了他兄弟，又是恼，又是气。……今日索性连早饭也没吃。……你们知道有什么好大夫没有？;
+choose:趁势把侄儿受的委屈说个明白:n10_a|转往西府，去找凤姐评理:n10_b|把来意咽下，顺着说请大夫:n10_c;
+label:n10_c;
+callScene:hit.txt -pts=2;
+jumpLabel:n10_r;
+label:n10_a;
+setVar:pw10=1;
+callScene:pw.txt -pw=当着秦氏的婆婆兴师问罪？她家的日子，还要靠宁府照应。;
+jumpLabel:n10_r;
+label:n10_b;
+setVar:pw10=2;
+callScene:pw.txt -pw=找凤姐评理？金荣进学，原是托凤姐的情面才得的。;
+label:n10_r;
+changeFigureDiff:jinshi_fawn.webp -left -next;
+setAnimation:slump -target=fig-left -next;
+石上原文:金氏听了这半日话，把方才在他嫂子家的那一团要向秦氏理论的盛气，早吓的都丢在爪洼国去了。;
+解读:回目「金寡妇贪利权受辱」：金家图学里的茶饭、薛蟠的资助，只好忍气；璜大奶奶家也常靠尤氏、凤姐资助，盛气一到宁府就消了。;
+changeFigure:none -left -next;
+
+; ===== 节点11 第11回 王熙凤 中 =====
+changeBg:huifang.webp -next;
+changeFigure:fengjie.webp -right -next;
+changeFigure:jiarui_leer.webp -left -enter=walk-in-left -exit=walk-out-left -next;
+setAnimation:startle -target=fig-right -next;
+:【第十一回 · 你是王熙凤 · 中 +2】会芳园里，贾瑞从假山后走来，拿眼睛不住的觑着你——;
+setAnimation:approach-right -target=fig-left -next;
+贾瑞:也是合该我与嫂子有缘。;
+setAnimation:recoil-right -target=fig-right -next;
+choose:沉下脸来，告诉尤氏:n11_a|装不懂，往后绕着走:n11_b|假意含笑，暗中盘算:n11_c;
+label:n11_c;
+callScene:hit.txt -pts=2;
+jumpLabel:n11_r;
+label:n11_a;
+setVar:pw11=1;
+callScene:pw.txt -pw=当场翻脸？凤姐要叫他尝尝自己的手段。;
+jumpLabel:n11_r;
+label:n11_b;
+setVar:pw11=2;
+callScene:pw.txt -pw=绕着走？凤姐从来不是躲事的人。;
+label:n11_r;
+changeFigure:none -left -next;
+changeFigureDiff:fengjie_scheme.webp -right -next;
+石上原文:见他去远了，心里暗忖道：“……几时叫他死在我的手里，他才知道我的手段！”;
+解读:脸上含笑，心里已定下惩治——凤姐的笑比怒更可怕。;
+changeFigure:none -right -next;
+
+; ===== 节点12 第12回 王熙凤 中 =====
+; 三项都具体到做法；干扰项：凑足救人（太太的吩咐）、一钱不送（她恨贾瑞）。凤姐是对上周全、对下不留余地
+changeBg:fengjie_room.webp -next;
+changeFigure:fengjie.webp -right -next;
+:【第十二回 · 你是王熙凤 · 中 +2】相思局后，贾瑞一病不起，要吃独参汤。你推说整枝的人参都用了，王夫人却道——;
+王夫人:……或是你珍大哥哥那府里再寻些来，凑着给人家。吃好了，救人一命，也是你的好处。;
+choose:各处寻来，凑足二两送去:n12_a|凑几钱渣末送去，回说送了二两:n12_b|回说各处都没了，一钱不送:n12_c;
+label:n12_b;
+callScene:hit.txt -pts=2;
+jumpLabel:n12_r;
+label:n12_a;
+setVar:pw12=1;
+callScene:pw.txt -pw=凑足二两救人一命？凤姐对贾瑞，没有这份好心。;
+jumpLabel:n12_r;
+label:n12_c;
+setVar:pw12=2;
+callScene:pw.txt -pw=一钱不送，太太那里交代不过去；凤姐两头都要顾到。;
+label:n12_r;
+changeFigureDiff:fengjie_scheme.webp -right -next;
+石上原文:凤姐听了，也不遣人去寻，只得将些渣末泡须凑了几钱，命人送去，只说：“太太送来的，再也没了。”然后回王夫人，只说：“都寻了来，共凑了有二两送去。”;
+changeFigure:none -right -next;
+
+; ----- 第12回 风月宝鉴（回顾二出自这里） -----
+:跛足道人送来「风月宝鉴」，叮嘱：“千万不可照正面，只照他的背面，要紧，要紧！”;
 石上原文:向反面一照，只见一个骷髅立在里面。……又将正面一照，只见凤姐站在里面招手叫他。;
-解读:贾瑞偏照正面，终于丧命。美人是「假」，骷髅是「真」——“假作真时真亦假”。;
+解读:贾瑞偏照正面，终于丧命。招手的美人，他当了真。;
 changeScene:act3.txt;

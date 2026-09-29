@@ -1,0 +1,32 @@
+[
+ {
+  "position": {
+   "x": 0,
+   "y": 0
+  },
+  "duration": 0
+ },
+ {
+  "position": {
+   "x": -80,
+   "y": -8
+  },
+  "duration": 130,
+  "ease": "easeOut"
+ },
+ {
+  "position": {
+   "x": -80,
+   "y": -8
+  },
+  "duration": 140
+ },
+ {
+  "position": {
+   "x": 0,
+   "y": 0
+  },
+  "duration": 320,
+  "ease": "easeInOut"
+ }
+]

@@ -1,61 +1,136 @@
-; 第三幕 一丧一喜（第13–16回）：节点9 秦可卿托梦、节点10 弄权铁槛寺
+; 第三幕 一丧一喜（第13–16回）：节点13 秦可卿托梦（回顾一出自这里）、节点14 林如海之丧、节点15 弄权铁槛寺（回顾三出自这里）、节点16 秦钟之死；第16回幕间金哥之死、元春晋封
 intro:第三幕　一丧一喜|第十三回至第十六回 -delayTime=500 -fontSize=large -backgroundColor=rgba(20,18,16,0.82) -fontColor=rgba(243,237,226,1);
 
-; ===== 节点9 第13回 王熙凤 中（回顾三出自这里） =====
+; ===== 节点13 第13回 秦可卿 难 =====
 changeBg:night_room.webp -next;
-changeFigure:keqing.webp -left -next;
-changeFigure:fengjie.webp -right -next;
-:【第十三回 · 你是王熙凤 · 中 +2】三更时分，凤姐恍惚只见秦氏从外走来——;
-秦可卿:常言‘月满则亏，水满则溢’……如今我们家赫赫扬扬，已将百载，一日倘或乐极悲生……;
+changeFigure:fengjie_troubled.webp -right -next;
+changeFigure:keqing_sorrow.webp -left -enter=ghost-in -exit=dream-out -next;
+:【第十三回 · 你是秦可卿 · 难 +3】三更时分，秦氏入梦，与凤姐作别——;
+秦可卿:常言‘月满则亏，水满则溢’……若应了那句‘树倒猢狲散’的俗语，岂不虚称了一世的诗书旧族了！;
 王熙凤:这话虑的极是，但有何法可以永保无虞？;
-choose:趁今日富贵，在祖茔附近多置田庄房舍地亩，家塾也设在那里:n9_a|多备金银，打点宫里，保住贾家的圣眷:n9_b|早日分家，各房自谋生路:n9_c;
-label:n9_a;
-callScene:hit.txt -pts=2;
-jumpLabel:n9_r;
-label:n9_b;
-平行世界:金银再多，一旦获罪也要入官。秦氏想的，是抄家也抄不走的退路。;
-callScene:miss.txt;
-jumpLabel:n9_r;
-label:n9_c;
-平行世界:秦氏要的是合族一同定下规矩，为全族留一条后路。;
-callScene:miss.txt;
-label:n9_r;
-石上原文:趁今日富贵，将祖茔附近多置田庄房舍地亩……便败落下来，子孙回家读书务农，也有个退步。;
-秦可卿:三春去后诸芳尽，各自须寻各自门。;
+choose:在祖茔附近多置田庄，家塾也设在那里:n13_a|多攒金银，在宫里上下打点:n13_b|劝各房早早分家，各自置产:n13_c;
+label:n13_a;
+callScene:hit.txt -pts=3;
+jumpLabel:n13_r;
+label:n13_b;
+setVar:pw13=1;
+callScene:pw.txt -pw=金银再多，一旦获罪也要入官。秦氏想的，是入不了官的退路。;
+jumpLabel:n13_r;
+label:n13_c;
+setVar:pw13=2;
+callScene:pw.txt -pw=秦氏要的是合族按房轮流掌管，偏不是各自散开。;
+label:n13_r;
+setAnimation:nod -target=fig-left -next;
+石上原文:便是有了罪，凡物可入官，这祭祀产业连官也不入的。便败落下来，子孙回家读书务农，也有个退步。;
+秦可卿:眼见不日又有一件非常喜事，真是烈火烹油，鲜花著锦之盛。……万不可忘了那‘盛筵必散’的俗语。;
+intro:三春过后诸芳尽，|各自须寻各自门。 -delayTime=900 -hold -backgroundColor=rgba(20,18,16,0.82) -fontColor=rgba(243,237,226,1);
 changeFigure:none -left -next;
-解读:云板连叩四下，东府蓉大奶奶没了。盛极之时，秦可卿已看见了衰败。;
+setAnimation:startle -target=fig-right -next;
+:云板连叩四下，凤姐惊醒。人回：“东府蓉大奶奶没了。”;
+解读:满门只见赫赫扬扬，秦可卿却在盛极之时想到退路与散场。;
 changeFigure:none -right -next;
 
-; ----- 幕间：第13–14回 -----
+; ----- 幕间：第13–14回 协理宁国府（回顾一、三的干扰项出自这里） -----
 changeBg:rongfu.webp -next;
-:凤姐协理宁国府，点卯有人来迟，她喝命：“带出去，打二十板子！”宁府上下从此不敢怠慢。林如海也在扬州病故。;
+changeFigure:fengjie_stern.webp -right -next;
+:贾珍替贾蓉捐了五品龙禁尉，丧礼风光。凤姐协理宁国府，点卯有人来迟，打了二十板子：;
+王熙凤:本来要饶你，只是我头一次宽了，下次人就难管，不如现开发的好。;
+setAnimation:shake-head -target=fig-right -next;
 
-; ===== 节点10 第15回 王熙凤 中 =====
+; ===== 节点14 第14回 贾宝玉 易 =====
+; 凤姐想的是黛玉从此长住；干扰项一个只顾自己欢喜，一个要去接人
+changeFigureDiff:fengjie.webp -right -next;
+changeFigure:baoyu.webp -left -enter=walk-in-left -next;
+:【第十四回 · 你是贾宝玉 · 易 +1】昭儿从苏州回来报信：林姑老爷九月初三日没了，二爷带林姑娘送灵到苏州，年底才回。;
+changeFigureDiff:fengjie_smile.webp -right -next;
+王熙凤:你林妹妹可在咱们家住长了。;
+choose:“想来这几日他不知哭的怎样呢。”:n14_a|“这下妹妹再不回扬州了！”:n14_b|“快打发人去苏州接妹妹！”:n14_c;
+label:n14_a;
+callScene:hit.txt -pts=1;
+jumpLabel:n14_r;
+label:n14_b;
+setVar:pw14=1;
+callScene:pw.txt -pw=只顾自己欢喜？宝玉头一个想到的，是黛玉的眼泪。;
+jumpLabel:n14_r;
+label:n14_c;
+setVar:pw14=2;
+callScene:pw.txt -pw=黛玉正随贾琏扶灵南下，接不回来；宝玉先想到的是她的眼泪。;
+label:n14_r;
+setAnimation:slump -target=fig-left -next;
+石上原文:宝玉道：“了不得，想来这几日他不知哭的怎样呢。”说着，蹙眉长叹。;
+解读:同一个消息，凤姐想的是黛玉从此长住，宝玉想的是她哭得怎样。父母双亡，黛玉此后只能依傍外祖母家。;
+changeFigure:none -left -next;
+changeFigure:none -right -next;
+
+; ----- 幕间：第14–15回 路谒北静王（香串在第16回被黛玉掷还） -----
+changeBg:procession.webp -next;
+changeFigure:beijingwang.webp -right -enter=walk-in-right -next;
+changeFigure:baoyu_timid.webp -left -enter=walk-in-left -next;
+setAnimation:bow -target=fig-left -next;
+:出殡路上，北静王水溶设祭，召见宝玉，褪下念珠相赠：;
+北静王:此是前日圣上亲赐鹡鸰香念珠一串，权为贺敬之礼。;
+changeFigure:none -left -next;
+changeFigure:none -right -next;
+
+; ===== 节点15 第15回 王熙凤 中 =====
 changeBg:nunnery.webp -next;
-changeFigure:jingxu.webp -left -next;
 changeFigure:fengjie.webp -right -next;
-:【第十五回 · 你是王熙凤 · 中 +2】凤姐在馒头庵歇脚，老尼净虚求她修书给长安节度云老爷，逼守备家退了张金哥的亲——;
-净虚:若是肯行，张家连倾家孝顺也都情愿。;
-王熙凤:我也不等银子使，也不做这样的事。;
-净虚:……如今不管这事，张家不知道……倒像府里连这点子手段也没有的一般。;
-choose:仍然一口回绝，不管这桩闲事:n10_a|发了兴头，要三千两银子，替张家出这口气:n10_b|分文不取，只当替佛门行善:n10_c;
-label:n10_b;
+changeFigure:jingxu_wheedle.webp -left -enter=walk-in-left -next;
+setAnimation:bow -target=fig-left -next;
+setAnimation:shake-head -target=fig-right -next;
+:【第十五回 · 你是王熙凤 · 中 +2】老尼净虚求凤姐修书压一压守备，好让张家女儿金哥退亲。凤姐先说“我也不做这样的事”。;
+setAnimation:approach-right -target=fig-left -next;
+净虚:……倒象府里连这点子手段也没有的一般。;
+choose:仍旧回绝:n15_a|要三千两，替他出气:n15_b|分文不取，只当布施:n15_c;
+label:n15_b;
 callScene:hit.txt -pts=2;
-jumpLabel:n10_r;
-label:n10_a;
-平行世界:若真回绝，倒是一桩善事——可凤姐最受不得一个「激」字。;
-callScene:miss.txt;
-jumpLabel:n10_r;
-label:n10_c;
-平行世界:分文不取、行善积德？这可不像那个在宁府说一不二的凤姐。;
-callScene:miss.txt;
-label:n10_r;
-石上原文:凤姐听了这话，便发了兴头，说道：“你是素日知道我的，从来不信什么是阴司地狱报应的……你叫他拿三千银子来，我就替他出这口气。”;
-解读:结果金哥自缢，守备之子投河——三千两银子断送了两条性命。这是凤姐精明强干的另一面。;
+jumpLabel:n15_r;
+label:n15_a;
+setVar:pw15=1;
+callScene:pw.txt -pw=若真回绝倒是善事，可凤姐受不得一个「激」字。;
+jumpLabel:n15_r;
+label:n15_c;
+setVar:pw15=2;
+callScene:pw.txt -pw=分文不取、行善积德？这可不像那个说一不二的凤姐。;
+label:n15_r;
+changeFigureDiff:fengjie_scheme.webp -right -next;
+石上原文:凤姐……说道：“你是素日知道我的，从来不信什么是阴司地狱报应的……你叫他拿三千银子来，我就替他出这口气。”;
+解读:协理宁国府是公务；这回却是假托贾琏之名修书，借权势谋私。一个「激」字，就叫她揽下了。;
 changeFigure:none -left -next;
 changeFigure:none -right -next;
 
-; ----- 幕间：第16回 -----
+; ----- 幕间：第16回 一丧一喜（回顾一的答案出自这里） -----
 changeBg:rongfu.webp -next;
-:第十六回，元春“晋封为凤藻宫尚书，加封贤德妃”，贾府奉旨修建省亲别墅。秦钟病逝。;
+:金哥悬梁，守备之子投河，凤姐坐享三千两。偏在此时，元春晋封贤德妃，贾府奉旨修建省亲别墅。;
+changeFigure:daiyu.webp -right -enter=walk-in-right -next;
+changeFigureDiff:daiyu_sneer.webp -right -next;
+setAnimation:fling -target=fig-right -next;
+:黛玉办完父丧回府，宝玉把念珠转赠给她，她却道：“什么臭男人拿过的！我不要他。”;
+changeFigure:none -right -next;
+
+; ===== 节点16 第16回 秦钟 难 =====
+; 干扰项：托付智能（拘魂时他确实记挂着智能，却没对宝玉说）、坚守旧见识（遗言恰恰相反）
+changeBg:night_room.webp -next;
+changeFigure:qinzhong_ill.webp -right -next;
+changeFigure:baoyu_tearful.webp -left -enter=walk-in-left -next;
+:【第十六回 · 你是秦钟 · 难 +3】父亲为智能的事气死，你病势沉重。鬼判来拘魂，听见“宝玉来了”，才放你回来片刻——;
+setAnimation:approach-right -target=fig-left -next;
+贾宝玉:有什么话留下两句。;
+choose:“智能没有下落，求你照看他。”:n16_a|“你我见识高过世人，莫要改了。”:n16_b|“以后还该立志功名，荣耀显达。”:n16_c;
+label:n16_c;
+callScene:hit.txt -pts=3;
+jumpLabel:n16_r;
+label:n16_a;
+setVar:pw16=1;
+callScene:pw.txt -pw=拘魂时他确实记挂着智能，可对宝玉说出口的，偏不是这个。;
+jumpLabel:n16_r;
+label:n16_b;
+setVar:pw16=2;
+callScene:pw.txt -pw=临终的秦钟，偏偏推翻了两人的旧见识，说自己「自误了」。;
+label:n16_r;
+setAnimation:expire -target=fig-right -keep -next;
+石上原文:秦钟道：“并无别话。以前你我见识自为高过世人，我今日才知自误了。以后还该立志功名，以荣耀显达为是。”说毕，便长叹一声，萧然长逝了。;
+changeFigure:none -right -next;
+解读:拘魂时他记挂着家务、银子和智能，遗言却转向功名。是悔悟、无奈还是反讽？书中没有说破。;
+changeFigure:none -left -next;
 changeScene:act4.txt;

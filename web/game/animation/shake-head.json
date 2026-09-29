@@ -1,0 +1,26 @@
+[
+ {
+  "rotation": 0,
+  "duration": 0
+ },
+ {
+  "rotation": 0.014,
+  "duration": 150,
+  "ease": "easeOut"
+ },
+ {
+  "rotation": -0.014,
+  "duration": 200,
+  "ease": "easeInOut"
+ },
+ {
+  "rotation": 0.009,
+  "duration": 200,
+  "ease": "easeInOut"
+ },
+ {
+  "rotation": 0,
+  "duration": 220,
+  "ease": "easeInOut"
+ }
+]

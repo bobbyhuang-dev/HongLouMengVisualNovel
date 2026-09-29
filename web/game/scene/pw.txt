@@ -1,0 +1,5 @@
+; 剧情抉择选错：callScene:pw.txt -pw=平行世界一句;（调用前先 setVar:pwN=1或2 记下走进了哪个平行世界）
+; 平行世界与计分合成一句，少点一次。连击清零。
+setVar:combo=0;
+setVar:pwn=pwn+1;
+平行世界:{pw}【未能还原 +0】当前积分：{score}　连击中断;

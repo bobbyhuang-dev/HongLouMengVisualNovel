@@ -1,1 +1,2 @@
-:【回顾有误 +0】正确答案是「{ans}」。当前积分：{score};
+setAnimation:shake-head -target=fig-center -next;
+:【回顾有误 +0】正确答案：{ans}。当前积分：{score};

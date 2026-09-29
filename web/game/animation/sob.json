@@ -1,0 +1,97 @@
+[
+ {
+  "position": {
+   "x": 0,
+   "y": 0
+  },
+  "scale": {
+   "x": 1,
+   "y": 1
+  },
+  "duration": 0
+ },
+ {
+  "position": {
+   "x": 0,
+   "y": -10
+  },
+  "scale": {
+   "x": 1,
+   "y": 1.006
+  },
+  "duration": 170,
+  "ease": "easeOut"
+ },
+ {
+  "position": {
+   "x": 0,
+   "y": 6
+  },
+  "scale": {
+   "x": 1,
+   "y": 1
+  },
+  "duration": 300,
+  "ease": "easeIn"
+ },
+ {
+  "position": {
+   "x": 0,
+   "y": -10
+  },
+  "scale": {
+   "x": 1,
+   "y": 1.006
+  },
+  "duration": 170,
+  "ease": "easeOut"
+ },
+ {
+  "position": {
+   "x": 0,
+   "y": 6
+  },
+  "scale": {
+   "x": 1,
+   "y": 1
+  },
+  "duration": 300,
+  "ease": "easeIn"
+ },
+ {
+  "position": {
+   "x": 0,
+   "y": -10
+  },
+  "scale": {
+   "x": 1,
+   "y": 1.006
+  },
+  "duration": 170,
+  "ease": "easeOut"
+ },
+ {
+  "position": {
+   "x": 0,
+   "y": 6
+  },
+  "scale": {
+   "x": 1,
+   "y": 1
+  },
+  "duration": 300,
+  "ease": "easeIn"
+ },
+ {
+  "position": {
+   "x": 0,
+   "y": 0
+  },
+  "scale": {
+   "x": 1,
+   "y": 1
+  },
+  "duration": 260,
+  "ease": "easeInOut"
+ }
+]

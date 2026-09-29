@@ -1,2 +1,5 @@
+changeFigureDiff:kongkong_smile.webp -next;
+setAnimation:nod -target=fig-center -next;
 setVar:score=score+2;
 :【回顾正确 +2】当前积分：{score};
+changeFigureDiff:kongkong_ask.webp -next;
