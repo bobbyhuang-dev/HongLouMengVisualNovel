@@ -1,0 +1,11 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "hongloumeng",
+  "compatibility_date": "2026-09-29",
+  "assets": {
+    "directory": "./dist"
+  },
+  "routes": [
+    { "pattern": "houloumeng.bobbyhuang.dev", "custom_domain": true }
+  ]
+}
