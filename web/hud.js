@@ -3,6 +3,8 @@
 // 监听对话框文字，看到【计时开始】开始计时，看到【计时结束】定格；
 // 积分从剧本输出的「当前积分：N」「总积分：N」中读取。
 (() => {
+  // 正式比赛由 competition-game.js 展示服务器确认的积分与统一计时。
+  if (document.documentElement.dataset.matchRoom) return;
   const START = '【计时开始】';
   const END = '【计时结束】';
   const SCORE_RE = /(?:当前积分|总积分)[：:]\s*(\d+)/;

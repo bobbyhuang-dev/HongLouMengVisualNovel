@@ -2,7 +2,7 @@
  "baochai_shy": [
   1.005,
   0,
-  28
+  56
  ],
  "baochai_smile": [
   1.0,
@@ -16,43 +16,43 @@
  ],
  "baoyu_angry": [
   0.93,
-  -4,
-  56
+  -8,
+  112
  ],
  "baoyu_proud": [
   0.99,
   0,
-  12
+  24
  ],
  "baoyu_smile": [
   1.005,
-  -4,
-  12
+  -8,
+  24
  ],
  "baoyu_tearful": [
   0.965,
-  -16.0,
-  52.0
+  -32.0,
+  104.0
  ],
  "baoyu_timid": [
   1.04,
   0,
-  -20
+  -40
  ],
  "daiyu_smile": [
   0.915,
-  -8,
-  44
+  -16,
+  88
  ],
  "daiyu_sneer": [
   0.94,
   0,
-  36
+  72
  ],
  "daiyu_tearful": [
   1.0,
-  -4,
-  16
+  -8,
+  32
  ],
  "fengjie_scheme": [
   1.0,
@@ -61,23 +61,23 @@
  ],
  "fengjie_smile": [
   1.005,
-  -4,
-  24
+  -8,
+  48
  ],
  "fengjie_stern": [
   1.005,
   0,
-  28
+  56
  ],
  "fengjie_troubled": [
   1.02,
-  4,
-  20
+  8,
+  40
  ],
  "jiahuan_cry": [
   1.005,
-  -4.0,
-  28.0
+  -8.0,
+  56.0
  ],
  "jiaqiang_sly": [
   1.0,
@@ -86,8 +86,8 @@
  ],
  "jiarui_leer": [
   0.96,
-  -8,
-  44
+  -16,
+  88
  ],
  "jiazheng_nod": [
   1.0,
@@ -96,8 +96,8 @@
  ],
  "jiazheng_scold": [
   0.975,
-  -16,
-  36
+  -32,
+  72
  ],
  "jinghuan_point": [
   0.97,
@@ -112,7 +112,7 @@
  "jinshi_angry": [
   0.99,
   0.0,
-  8.0
+  16.0
  ],
  "jinshi_fawn": [
   1.005,
@@ -122,7 +122,7 @@
  "keqing_sorrow": [
   1.005,
   0,
-  16
+  32
  ],
  "kongkong_ask": [
   0.99,
@@ -136,48 +136,48 @@
  ],
  "laolao_joy": [
   0.995,
-  -4,
-  4
+  -8,
+  8
  ],
  "laolao_plead": [
   0.97,
-  4,
-  36
+  8,
+  72
  ],
  "lengzixing_gossip": [
   0.985,
-  8.0,
-  12.0
+  16.0,
+  24.0
  ],
  "mingyan_fierce": [
   0.935,
-  8.0,
-  92.0
+  16.0,
+  184.0
  ],
  "qinzhong_ill": [
   0.985,
-  12.0,
-  12.0
+  24.0,
+  24.0
  ],
  "xiangyun_laugh": [
   0.99,
   0,
-  12
+  24
  ],
  "xiangyun_pout": [
   1.0,
-  4,
+  8,
   0
  ],
  "xiren_firm": [
   1.02,
   0.0,
-  20.0
+  40.0
  ],
  "xiren_smile": [
   0.995,
-  -4.0,
-  4.0
+  -8.0,
+  8.0
  ],
  "yinger_pout": [
   1.0,
@@ -186,8 +186,8 @@
  ],
  "yuanchun_tearful": [
   1.005,
-  -4,
-  24
+  -8,
+  48
  ],
  "yucun_earnest": [
   1.0,
@@ -197,7 +197,7 @@
  "yucun_ponder": [
   1.01,
   0,
-  24
+  48
  ],
  "yucun_sly": [
   1.0,

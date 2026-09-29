@@ -1,0 +1,46 @@
+#hlm-match-gate[hidden], #hlm-match-gate [hidden] { display: none; }
+#hlm-match-bar {
+  position: fixed; z-index: 2147483646; top: 12px; right: 12px;
+  display: flex; gap: 14px; align-items: center; flex-wrap: wrap;
+  max-width: calc(100vw - 48px); padding: 10px 16px; border: 1px solid #cba67888;
+  border-radius: 14px; background: #231b1bed; color: #fff1dd;
+  font: 15px/1.5 "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+#hlm-match-bar button {
+  margin: 0; padding: 0; border: 0; background: none; color: #edcb94;
+  font: inherit; cursor: pointer; text-decoration: underline; text-underline-offset: 3px;
+}
+#hlm-match-bar .match-identity { max-width: 22em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#hlm-match-note {
+  position: fixed; z-index: 2147483646; top: 70px; right: 14px; margin: 0;
+  max-width: calc(100vw - 48px); padding: 5px 10px; border-radius: 6px;
+  color: #fff1dd; background: #231b1bcc; pointer-events: none;
+  font: 13px/1.5 "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+#hlm-match-gate {
+  position: fixed; inset: 0; z-index: 2147483647; display: grid; place-items: center;
+  padding: 24px; background: #21191ce8; overflow-y: auto;
+  font: 16px/1.8 "PingFang SC", "Microsoft YaHei", sans-serif; color: #392826;
+}
+#hlm-match-gate .match-card {
+  width: min(560px, 100%); box-sizing: border-box; padding: clamp(24px, 5vw, 48px);
+  border-radius: 20px; border: 1px solid #d0b18a; background: #faf3e6;
+  box-shadow: 0 24px 80px #0005;
+}
+#hlm-match-gate h1 { margin: 8px 0 20px; font: 600 clamp(24px, 4vw, 32px)/1.4 "Songti SC", serif; }
+#hlm-match-gate .match-eyebrow { margin: 0; color: #8d3c42; letter-spacing: .15em; font-size: 13px; }
+#hlm-match-gate .match-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; align-items: center; }
+#hlm-match-gate button {
+  padding: 10px 16px; border: 1px solid #c9ab89; border-radius: 8px;
+  background: transparent; color: #78323b; font: inherit; cursor: pointer;
+}
+#hlm-match-gate button:not(.match-room) { background: #78323b; color: #fff7e8; border-color: #78323b; }
+#hlm-match-gate button:focus-visible, #hlm-match-bar button:focus-visible { outline: 3px solid #bb914d; outline-offset: 4px; }
+#chooseContainer .hlm-answer-locked { opacity: .4; cursor: not-allowed; }
+#chooseContainer [role="button"]:focus-visible { outline: 5px solid #e4bb73; outline-offset: 6px; }
+@media (max-width: 600px) {
+  #hlm-match-bar { top: 6px; right: 6px; gap: 5px 10px; font-size: 12px; padding: 7px 10px; }
+  #hlm-match-bar .match-identity { max-width: 12em; }
+  #hlm-match-note { top: 76px; font-size: 11px; }
+}

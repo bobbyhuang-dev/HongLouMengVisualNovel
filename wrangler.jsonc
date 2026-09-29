@@ -1,11 +1,32 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "hongloumeng",
+  "main": "server/index.ts",
   "compatibility_date": "2026-09-29",
   "assets": {
-    "directory": "./dist"
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api", "/api/*", "/play", "/play/*"]
   },
+  "rules": [
+    {
+      "type": "Text",
+      "globs": ["**/*.txt"],
+      "fallthrough": true
+    }
+  ],
+  "durable_objects": {
+    "bindings": [
+      { "name": "ROOMS", "class_name": "CompetitionRoom" }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1-competition-room",
+      "new_sqlite_classes": ["CompetitionRoom"]
+    }
+  ],
   "routes": [
-    { "pattern": "houloumeng.bobbyhuang.dev", "custom_domain": true }
+    { "pattern": "hongloumeng.bobbyhuang.dev", "custom_domain": true }
   ]
 }

@@ -1,0 +1,20 @@
+{
+  "name": "hongloumeng-competition",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "uv run --no-project --with fonttools --with brotli python tools/build_site.py",
+    "dev": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy"
+  },
+  "dependencies": {
+    "qrcode-generator": "^2.0.4"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  },
+  "allowScripts": {
+    "esbuild@0.28.1": true,
+    "workerd@1.20260926.1": true
+  }
+}

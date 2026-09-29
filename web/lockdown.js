@@ -5,12 +5,23 @@
 (() => {
   const HIDDEN_BAR = new Set(['回想', '快速存档', '快速读档', '存档', '读档']);
   const HIDDEN_TITLE = new Set(['读取存档']);
+  const code = document.documentElement.dataset.matchRoom || '';
+  const player = document.documentElement.dataset.matchPlayer || '';
+  const formal = /^\d{6}$/.test(code) && /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(player);
+  if (formal) {
+    // 正式比赛不可通过菜单重开、导入存档或清空本地进度。
+    HIDDEN_BAR.add('标题');
+    HIDDEN_BAR.add('选项');
+    HIDDEN_TITLE.add('游戏选项');
+    HIDDEN_TITLE.add('退出游戏');
+  }
 
   const hide = (el) => {
     if (el && el.style.display !== 'none') el.style.display = 'none';
   };
 
   const sweep = () => {
+    if (formal && localStorage.getItem(`hlm-room-begun:${code}:${player}`) === 'true') HIDDEN_TITLE.add('开始游戏');
     for (const label of document.querySelectorAll('#root [class*="_button_text_"]')) {
       if (HIDDEN_BAR.has(label.textContent.trim())) hide(label.closest('[class*="_singleButton_"]'));
     }
@@ -26,6 +37,8 @@
   window.addEventListener(
     'wheel',
     (e) => {
+      const node = e.target instanceof Element ? e.target : e.target?.parentElement;
+      if (node?.closest('#hlm-room-dialog')) return;
       if (e.deltaY < 0) e.stopPropagation();
     },
     { capture: true },

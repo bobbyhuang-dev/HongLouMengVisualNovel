@@ -1,0 +1,35 @@
+{
+  "character": "baochai",
+  "same_prompt_and_inputs": true,
+  "inputs": [
+    "art/sprites/baochai.png",
+    "docs/12图/5318e676b61afc4f450f5a8865a203b2.jpg"
+  ],
+  "requested": {
+    "family": "gpt-image-2.5-sunburst",
+    "quality": "max",
+    "size": "2048x3072",
+    "background": "transparent"
+  },
+  "fal": {
+    "file": "baochai.png",
+    "request_id": "01a0eb1a-4d7c-7110-9ad9-3a01ded56bc8",
+    "size": [
+      2048,
+      3072
+    ],
+    "requested_quality": "max"
+  },
+  "sub2api": {
+    "file": "baochai-sub2api.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "reported_quality": "medium",
+    "seconds": 54.2,
+    "warning": "requested size 2048x3072 was ignored by upstream Codex image backend"
+  },
+  "comparison_notes": "对照图以相同显示尺寸呈现；仅限这次单张样本，不代表统计上的模型质量差异。没有把 sub2api 的放大显示称为原生高分辨率。",
+  "bulk_generation": "paused_pending_user_comparison"
+}

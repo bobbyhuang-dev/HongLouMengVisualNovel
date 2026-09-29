@@ -2,7 +2,31 @@
 <html lang="zh-Hans">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="./icons/favicon.ico" />
+    <base>
+    <script>
+      // 正式比赛在相对资源解析前切到玩家资源命名空间；没有可用身份则保持练习存档，不静默开赛。
+      (() => {
+        const base = document.querySelector('base');
+        const abort = () => { base?.remove(); };
+        try {
+          const params = new URLSearchParams(location.search);
+          const code = params.get('room') || '';
+          if (!/^\d{6}$/.test(code) || params.get('play') !== '1') { abort(); return; }
+          const saved = JSON.parse(localStorage.getItem(`hlm-room-player:${code}`) || 'null');
+          const id = saved && typeof saved === 'object' ? saved.id : '';
+          const token = saved && typeof saved === 'object' ? saved.token : '';
+          if (typeof id !== 'string' || !/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id)) { abort(); return; }
+          if (typeof token !== 'string' || !/^[A-Za-z0-9_-]{22,128}$/.test(token)) { abort(); return; }
+          base.setAttribute('href', `/play/${code}/${id}/`);
+          document.documentElement.dataset.matchRoom = code;
+          document.documentElement.dataset.matchPlayer = id;
+        } catch {
+          abort();
+        }
+      })();
+    </script>
+    <link rel="icon" href="./icons/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="./icons/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
     <link rel="manifest" href="./manifest.json" />
     <title>红楼抉择</title>
@@ -138,6 +162,10 @@
     </style>
     <script type="module" crossorigin src="./assets/index-CC7KTie-.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-Dch1g2w9.css">
+    <link rel="stylesheet" href="./competition-home.css">
+    <script type="module" src="./competition-home.js"></script>
+    <link rel="stylesheet" href="./competition-game.css">
+    <script defer src="./competition-game.js"></script>
     <script defer src="./hud.js"></script>
     <script defer src="./lockdown.js"></script>
     <script defer src="./stage-life.js"></script>
@@ -324,6 +352,8 @@
     <!-- 注册 Service Worker -->
     <script>
       (() => {
+        // 正式比赛用 base 隔离存档命名空间，不在每个玩家资源路径再注册一份 Service Worker。
+        if (document.documentElement.dataset.matchRoom) return;
         const isIOS = window.__WEBGAL_DEVICE_INFO__?.isIOS ?? false;
         const localHostnames = ['localhost', '127.0.0.1', '::1'];
         const isLocalPreview = localHostnames.includes(window.location.hostname) || window.location.protocol === 'file:';

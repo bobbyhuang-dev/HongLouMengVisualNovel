@@ -127,8 +127,8 @@ def to_stage(im: Image.Image, params, reg_entry=None) -> Image.Image:
     return out.convert("RGBA")
 
 
-def save_webp(im: Image.Image, out: Path, quality: int) -> None:
-    im.save(out, "WEBP", quality=quality, method=6)
+def save_webp(im: Image.Image, out: Path, quality: int, *, lossless: bool) -> None:
+    im.save(out, "WEBP", quality=quality, lossless=lossless, method=6)
     print(f"{out.relative_to(ROOT)}  {out.stat().st_size // 1024} KB")
 
 
@@ -147,7 +147,7 @@ def prepare_figures() -> None:
         if key not in params:
             params[key] = stage_params(sa.load(sa.SPRITES / f"{key}.png"), HEIGHT[key])
         raw = sa.load(sa.SPRITES / f"{stem}.png")
-        save_webp(to_stage(raw, params[key], reg.get(stem)), FIGURE_OUT / f"{stem}.webp", 86)
+        save_webp(to_stage(raw, params[key], reg.get(stem)), FIGURE_OUT / f"{stem}.webp", 100, lossless=True)
         life["facing"][stem] = FACING.get(stem, FACING[key])
 
         for kind in ("blink", "talk"):
@@ -163,7 +163,7 @@ def prepare_figures() -> None:
             box = staged.getchannel("A").point(lambda a: 255 if a > 2 else 0).getbbox()
             if box is None:
                 continue
-            save_webp(staged.crop(box), FACE_OUT / f"{stem}.{kind}.webp", 90)
+            save_webp(staged.crop(box), FACE_OUT / f"{stem}.{kind}.webp", 100, lossless=True)
             life["patches"].setdefault(stem, {})[kind] = list(box[:2])
 
     (FIGURE_OUT / "life.json").write_text(json.dumps(life, ensure_ascii=False, sort_keys=True) + "\n")
@@ -177,7 +177,7 @@ def prepare_background(src: Path) -> None:
     im = im.resize((round(im.width * scale), round(im.height * scale)), Image.LANCZOS)
     left, top = (im.width - tw) // 2, (im.height - th) // 2
     im = im.crop((left, top, left + tw, top + th)).filter(ImageFilter.UnsharpMask(radius=1.6, percent=60, threshold=2))
-    save_webp(im, BACKGROUND_OUT / f"{src.stem}.webp", 82)
+    save_webp(im, BACKGROUND_OUT / f"{src.stem}.webp", 82, lossless=False)
 
 
 def main() -> None:

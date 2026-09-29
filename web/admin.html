@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" translate="no">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <meta name="referrer" content="no-referrer">
+    <meta name="robots" content="noindex">
+    <meta name="theme-color" content="#6e2436">
+    <title>主持比赛 · 红楼抉择</title>
+    <link rel="icon" href="./icons/favicon.ico" sizes="32x32">
+    <link rel="icon" href="./icons/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+    <link rel="stylesheet" href="./admin.css">
+  </head>
+  <body>
+    <a class="skip" href="#main">跳到主要内容</a>
+    <header class="site-head">
+      <a class="brand" href="./">红楼抉择</a>
+      <p class="seal" aria-hidden="true">主</p>
+      <div class="head-copy">
+        <h1 id="title">主持比赛</h1>
+        <p id="subtitle">创建房间 · 同学在主站加入</p>
+      </div>
+    </header>
+    <p id="live-summary" class="visually-hidden" aria-live="polite"></p>
+    <div id="banner" class="banner" hidden>
+      <p id="banner-text" role="status"></p>
+      <p id="banner-age" aria-live="off"></p>
+      <button type="button" id="banner-retry">立即重试</button>
+    </div>
+    <main id="main" tabindex="-1">
+      <noscript>
+        <section class="card">
+          <h2>请启用 JavaScript</h2>
+          <p>主持比赛需要 JavaScript 和网络连接。请启用 JavaScript 后刷新，或打开主站主持页：</p>
+          <p><a class="btn btn-primary" href="https://hongloumeng.bobbyhuang.dev/admin">https://hongloumeng.bobbyhuang.dev/admin</a></p>
+          <p><a href="./">返回单人练习</a></p>
+        </section>
+      </noscript>
+
+      <section id="view-gate" class="view card" hidden>
+        <h2>备用镜像不能开赛</h2>
+        <p id="gate-lead">此备用镜像只支持自由游玩。主持课堂竞赛，请打开主站。</p>
+        <p><a id="primary-link" class="btn btn-primary" href="https://hongloumeng.bobbyhuang.dev/admin">打开主站主持页</a></p>
+        <p id="primary-url" class="url">https://hongloumeng.bobbyhuang.dev/admin</p>
+        <p>单人练习仍可在本镜像进行。<a href="./">返回单人练习</a></p>
+      </section>
+
+      <section id="view-down" class="view card" hidden>
+        <h2>竞赛服务没有响应</h2>
+        <p id="down-lead">无法连接竞赛服务，暂时不能创建房间。请检查网络后重试。</p>
+        <p><a id="down-link" class="btn btn-primary" href="https://hongloumeng.bobbyhuang.dev/admin">主站主持页</a></p>
+        <p id="down-url" class="url">https://hongloumeng.bobbyhuang.dev/admin</p>
+        <p><button type="button" id="retry-probe" class="btn">重新检查</button></p>
+      </section>
+
+      <section id="view-bad" class="view card" hidden>
+        <h2>房间号无效</h2>
+        <p>房间号必须是 6 位数字。链接里没有凭证，改对号码后再打开。</p>
+        <p><a class="btn btn-primary" href="/admin">回到主持入口</a></p>
+      </section>
+
+      <section id="view-missing" class="view card" hidden>
+        <h2>找不到这个房间</h2>
+        <p id="missing-text"></p>
+        <p><a class="btn btn-primary" href="/admin">回到主持入口</a></p>
+      </section>
+
+      <section id="view-entry" class="view" hidden>
+        <form id="create-form" class="card" novalidate>
+          <h2>创建房间</h2>
+          <p class="hint">同学在主站首页加入，地址是 /?room=房间号。不要把这个主持页发给同学。</p>
+          <div class="field">
+            <label for="create-name">房间名称</label>
+            <input id="create-name" name="name" autocomplete="off" maxlength="120" required aria-describedby="create-name-hint" placeholder="例如：高一（3）班">
+            <p id="create-name-hint" class="hint">最多 60 个字。创建后凭证只保存在这台浏览器，刷新还能主持，换浏览器则不能。</p>
+          </div>
+          <p id="create-error" class="error" role="alert"></p>
+          <button type="submit" class="btn btn-primary">创建并主持</button>
+        </form>
+        <section id="saved" class="card" hidden>
+          <h2>这台浏览器主持过的房间</h2>
+          <p class="hint">只列出本机保存的主持人凭证。链接里没有凭证，换浏览器不能主持。</p>
+          <ul id="saved-list" class="saved-list"></ul>
+        </section>
+      </section>
+
+      <section id="view-host" class="view" hidden>
+        <div class="split">
+          <div class="card">
+            <p id="host-recovery" class="note"></p>
+            <p class="clock-label">房间号</p>
+            <p id="host-code" class="code">------</p>
+            <button type="button" id="copy-code" class="btn">复制房间号</button>
+            <img id="qr" class="qr" alt="" width="240" height="240" hidden>
+            <p id="qr-fallback" class="hint" hidden></p>
+            <div class="field">
+              <label for="join-url">主站加入链接</label>
+              <input id="join-url" readonly spellcheck="false">
+            </div>
+            <p><a id="join-link" href="./">在主页打开房间面板</a></p>
+            <button type="button" id="copy-join" class="btn">复制加入链接</button>
+            <p id="copy-status" class="hint" role="status"></p>
+            <p><a id="open-board" class="btn" href="/admin" target="_blank" rel="noopener noreferrer">打开投影记分板</a></p>
+            <p class="hint">加入链接指向主站首页。投影链接只有房间号，不含主持人凭证。</p>
+            <p><a href="/admin">创建其他房间</a></p>
+          </div>
+          <div class="card">
+            <div class="clock-block">
+              <p id="host-clock-label" class="clock-label"></p>
+              <p id="host-clock" class="clock" data-clock data-clock-label="host-clock-label" aria-live="off">——</p>
+            </div>
+            <p id="host-badge" class="badge"></p>
+            <p id="host-count" class="identity"></p>
+            <div class="actions">
+              <button type="button" id="start-btn" class="btn btn-primary">开始比赛</button>
+              <button type="button" id="end-btn" class="btn btn-danger" hidden>提前结束比赛</button>
+            </div>
+            <p id="start-hint" class="hint"></p>
+            <p id="host-error" class="error" role="alert"></p>
+            <h3>名单</h3>
+            <ul id="host-roster" class="roster"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="view-board" class="view" aria-label="投影记分板" hidden>
+        <div class="board-head">
+          <p id="board-badge" class="badge">实时</p>
+          <div class="clock-block">
+            <p id="board-clock-label" class="clock-label"></p>
+            <p id="board-clock" class="clock" data-clock data-clock-label="board-clock-label" aria-live="off">——</p>
+          </div>
+          <p id="board-counts" class="identity"></p>
+          <p id="board-note" class="note"></p>
+        </div>
+        <div class="board-scroll">
+          <table class="board-table">
+            <caption id="board-caption">记分板</caption>
+            <thead>
+              <tr>
+                <th scope="col">名次</th>
+                <th scope="col">昵称</th>
+                <th scope="col">正篇</th>
+                <th scope="col">回顾</th>
+                <th scope="col">积分</th>
+                <th scope="col">还原</th>
+                <th scope="col">用时</th>
+                <th scope="col">称号</th>
+                <th scope="col">状态</th>
+              </tr>
+            </thead>
+            <tbody id="board-body"></tbody>
+          </table>
+        </div>
+        <p id="board-empty" class="note" hidden>还没有人加入。</p>
+        <p class="scroll-hint">窄屏可以左右滑动表格，或逐条阅读。</p>
+      </section>
+    </main>
+    <footer class="site-foot">
+      <p><a href="./">返回单人练习</a></p>
+      <p id="privacy" class="privacy">主持页只在这台浏览器保存主持人凭证。请全程使用同一浏览器，不要用无痕模式，也不要清除本站数据，否则无法继续主持。同学在主站用昵称加入，不要填写真实姓名或学号。公开记分板只有昵称和成绩，没有答案，链接里也不含凭证。</p>
+      <p id="privacy-short" class="privacy" hidden>投影页只显示公开成绩，不读取、不发送主持人凭证。链接里没有凭证，也没有答案。</p>
+    </footer>
+    <dialog id="confirm-dialog" aria-labelledby="confirm-title">
+      <h2 id="confirm-title">确认操作</h2>
+      <p id="confirm-text"></p>
+      <p id="confirm-error" class="error" role="alert"></p>
+      <div class="actions">
+        <button type="button" id="confirm-cancel" class="btn">取消</button>
+        <button type="button" id="confirm-ok" class="btn btn-danger">确认</button>
+      </div>
+    </dialog>
+    <script type="module" src="./admin.js"></script>
+  </body>
+</html>

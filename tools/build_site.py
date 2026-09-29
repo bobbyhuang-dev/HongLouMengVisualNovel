@@ -20,8 +20,8 @@ DIST = ROOT / "dist"
 CHARSET_SOURCES = [
     *sorted((SRC / "game" / "scene").glob("*.txt")),
     SRC / "game" / "config.txt",
-    SRC / "hud.js",
-    SRC / "index.html",
+    *sorted(SRC.glob("*.js")),
+    *sorted(SRC.glob("*.html")),
     SRC / "manifest.json",
     *sorted((SRC / "assets").glob("*.js")),
 ]

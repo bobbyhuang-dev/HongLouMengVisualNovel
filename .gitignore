@@ -5,3 +5,4 @@ __pycache__/
 # 老师下发的课程材料，不随公开仓库发布
 docs/红楼梦游戏设计项目计划.pdf
 .wrangler/
+node_modules/

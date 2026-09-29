@@ -1,0 +1,95 @@
+#hlm-home-tools {
+  position: fixed; top: 20px; right: 24px; z-index: 2147483646;
+  font: 600 16px/1.5 "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+#hlm-home-tools[hidden], #hlm-room-dialog [hidden] { display: none !important; }
+#hlm-home-tools button {
+  padding: 12px 24px; border: 1px solid #cfad77; border-radius: 999px;
+  background: #592b32f2; color: #fff1d8; font: inherit; cursor: pointer;
+  box-shadow: 0 4px 24px #0005;
+}
+#hlm-room-dialog {
+  box-sizing: border-box; width: min(1020px, calc(100vw - 40px));
+  max-width: none; max-height: calc(100dvh - 40px); padding: 0;
+  border: 1px solid #c8a77c; border-radius: 18px; overflow: auto;
+  background: #faf4e9; color: #382b25; box-shadow: 0 24px 100px #0007;
+  font: 16px/1.65 "PingFang SC", "Microsoft YaHei", sans-serif;
+  text-align: left; font-variant-numeric: tabular-nums;
+}
+#hlm-room-dialog::backdrop { background: #201519a8; backdrop-filter: blur(5px); }
+#hlm-room-dialog *, #hlm-room-dialog *::before { box-sizing: border-box; }
+#hlm-room-dialog :is(h2, h3, h4, p) { margin: 0; }
+#hlm-room-dialog :is(h2, h3, h4) { font-family: "Songti SC", "Noto Serif SC", serif; }
+#hlm-room-dialog h2 { font-size: clamp(24px, 4vw, 32px); line-height: 1.4; }
+#hlm-room-dialog h3 { font-size: 22px; line-height: 1.5; }
+#hlm-room-dialog h4 { font-size: 17px; }
+#hlm-room-dialog .home-room-header {
+  position: sticky; top: 0; z-index: 1; display: flex; align-items: center;
+  justify-content: space-between; gap: 16px; padding: 22px 28px 18px;
+  border-bottom: 1px solid #d9c6a8; background: #faf4e9f7;
+}
+#hlm-room-dialog .home-room-kicker { color: #8d4550; font-size: 12px; letter-spacing: .12em; }
+#hlm-room-dialog .home-room-content { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; padding: 24px 28px 28px; }
+#hlm-room-dialog button, #hlm-room-dialog a {
+  color: #753640; font: inherit; font-weight: 600;
+  text-underline-offset: 4px;
+}
+#hlm-room-dialog .home-room-content > button { justify-self: start; }
+#hlm-room-dialog button {
+  min-height: 44px; padding: 8px 16px; border: 1px solid #c9ab87;
+  border-radius: 8px; background: transparent; cursor: pointer;
+}
+#hlm-room-dialog button:disabled { opacity: .5; cursor: wait; }
+#hlm-room-dialog .home-room-primary { border-color: #78323b; background: #78323b; color: #fff7e8; }
+#hlm-room-dialog button:hover:not(:disabled) { background: #eee0cb; }
+#hlm-room-dialog .home-room-primary:hover:not(:disabled) { background: #602832; }
+#hlm-room-dialog :is(button, input, a):focus-visible, #hlm-home-tools button:focus-visible {
+  outline: 3px solid #b78948; outline-offset: 3px;
+}
+#hlm-room-dialog .home-room-intro, #hlm-room-dialog .home-room-privacy { color: #705e4e; }
+#hlm-room-dialog .home-room-privacy { font-size: 13px; border-top: 1px solid #decdb6; padding-top: 18px; }
+#hlm-room-dialog .home-room-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0; }
+#hlm-room-dialog label { display: grid; gap: 7px; font-weight: 600; }
+#hlm-room-dialog input {
+  width: 100%; min-width: 0; min-height: 48px; padding: 10px 12px;
+  border: 1px solid #c5aa8b; border-radius: 8px; background: #fffdf9;
+  font: inherit; color: #382b25;
+}
+#hlm-room-dialog .home-room-notice { padding: 12px 16px; border-left: 3px solid #b18b50; background: #f1e6d3; }
+#hlm-room-dialog .home-room-error { color: #902f3d; padding: 12px 16px; border: 1px solid #d6a1a7; border-radius: 8px; background: #fbecea; }
+#hlm-room-dialog #home-room-session { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
+#hlm-room-dialog .home-room-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+#hlm-room-dialog .home-room-heading > div { min-width: 0; overflow-wrap: anywhere; }
+#hlm-room-dialog .home-room-badge { padding: 4px 12px; border: 1px solid #ccb087; border-radius: 999px; white-space: nowrap; font-size: 14px; color: #7d3542; }
+#hlm-room-dialog .home-room-clock { display: flex; gap: 20px; align-items: baseline; flex-wrap: wrap; color: #705e4e; }
+#hlm-room-dialog .home-room-clock strong { font: 600 38px/1.3 "Songti SC", serif; color: #793340; }
+#hlm-room-dialog .home-room-result { padding: 16px 20px; border: 1px solid #ceb78f; border-radius: 10px; background: #f6ead2; }
+#hlm-room-dialog .home-room-result > strong { font-size: 26px; color: #78323b; }
+#hlm-room-dialog .home-room-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+#hlm-room-dialog :is(#home-room-roster, #home-room-saved-list) { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 10px 0 0; }
+#hlm-room-dialog #home-room-roster { max-height: 140px; overflow: auto; }
+#hlm-room-dialog #home-room-roster li { padding: 4px 12px; border-radius: 6px; background: #ede2d0; }
+#hlm-room-dialog .home-room-board-scroll { overflow-x: auto; margin-top: 16px; }
+#hlm-room-dialog table { width: 100%; border-collapse: collapse; font-size: 14px; }
+#hlm-room-dialog caption { text-align: left; color: #705e4e; padding: 0 0 10px; }
+#hlm-room-dialog :is(th, td) { text-align: left; padding: 12px 8px; border-bottom: 1px solid #deccb0; white-space: nowrap; }
+#hlm-room-dialog thead { background: #eee1cc; }
+#hlm-room-dialog .c-nick { white-space: normal; overflow-wrap: anywhere; min-width: 5em; }
+#hlm-room-dialog .c-score { font-weight: 700; color: #7d3542; }
+#hlm-room-dialog tr.is-lead { background: #efdfbc; }
+#hlm-room-dialog tr.is-unfinished { box-shadow: inset 3px 0 #bea171; }
+@media (max-width: 600px) {
+  #hlm-home-tools { top: 12px; right: 12px; font-size: 14px; }
+  #hlm-home-tools button { padding: 10px 18px; }
+  #hlm-room-dialog { width: calc(100vw - 20px); max-height: calc(100dvh - 20px); border-radius: 12px; font-size: 14px; }
+  #hlm-room-dialog .home-room-header { padding: 16px; gap: 8px; }
+  #hlm-room-dialog .home-room-content { padding: 18px 16px; gap: 20px; }
+  #hlm-room-dialog .home-room-fields { grid-template-columns: 1fr; gap: 14px; }
+  #hlm-room-dialog .home-room-close { padding: 6px 10px; white-space: nowrap; font-size: 13px; }
+  #hlm-room-dialog .home-room-heading { align-items: flex-start; }
+  #hlm-room-dialog h3 { font-size: 20px; }
+  #hlm-room-dialog .home-room-kicker { font-size: 11px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #hlm-room-dialog { scroll-behavior: auto; }
+}

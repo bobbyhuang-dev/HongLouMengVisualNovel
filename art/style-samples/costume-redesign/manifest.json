@@ -1,0 +1,584 @@
+{
+  "status": "integrated",
+  "provider": "fal.ai",
+  "model": "openai/gpt-image-2.5/sunburst/edit",
+  "quality": "max",
+  "generated_costume_size": [
+    2048,
+    3072
+  ],
+  "background": "transparent",
+  "characters": 20,
+  "base_portraits": 20,
+  "expression_portraits": 37,
+  "preserved_characters": [
+    "kongkong",
+    "jinghuan",
+    "jingxu"
+  ],
+  "stage_export": {
+    "size": [
+      1280,
+      1440
+    ],
+    "format": "lossless WebP"
+  },
+  "postprocessing": "服饰按原站姿配准；56张回贴原头部，jiarui_leer保留新头部避免近脸手势拼接重影。111张脸部改图按新几何重映射，另3张重新生成。清除alpha<=4边缘杂点。",
+  "references_note": "参考 docs/12图 工笔画及原著服饰描写，属于游戏服饰设计，不作为单一朝代考古复原。",
+  "sources": [
+    "https://zh.wikisource.org/zh-hans/紅樓夢/第008回"
+  ],
+  "face_regeneration": {
+    "jiarui_leer.blink": "01a0eb5a-22e8-7b52-b7e4-012c529d8d69",
+    "jiarui_leer.talk": "01a0eb5a-1cab-7ac0-9b6a-7e750caac448",
+    "qinzhong_ill.talk": "01a0eb6d-8f85-7203-9033-cdc43a3d2360"
+  },
+  "portraits": [
+    {
+      "stem": "baoyu",
+      "character": "贾宝玉",
+      "source": "art/sprites/baoyu.png",
+      "runtime": "web/game/figure/baoyu.webp",
+      "request_id": "01a0eb22-3b16-7e51-98ec-3b74167b2c2a",
+      "reference_images": []
+    },
+    {
+      "stem": "baoyu_smile",
+      "character": "贾宝玉",
+      "source": "art/sprites/baoyu_smile.png",
+      "runtime": "web/game/figure/baoyu_smile.webp",
+      "request_id": "01a0eb43-38c5-7b11-a330-cdb5784ded74",
+      "reference_images": []
+    },
+    {
+      "stem": "baoyu_angry",
+      "character": "贾宝玉",
+      "source": "art/sprites/baoyu_angry.png",
+      "runtime": "web/game/figure/baoyu_angry.webp",
+      "request_id": "01a0eb45-7e42-7c90-b047-a0356afdfef9",
+      "reference_images": []
+    },
+    {
+      "stem": "baoyu_timid",
+      "character": "贾宝玉",
+      "source": "art/sprites/baoyu_timid.png",
+      "runtime": "web/game/figure/baoyu_timid.webp",
+      "request_id": "01a0eb48-57d4-7c00-a276-b8ae475c7131",
+      "reference_images": []
+    },
+    {
+      "stem": "baoyu_proud",
+      "character": "贾宝玉",
+      "source": "art/sprites/baoyu_proud.png",
+      "runtime": "web/game/figure/baoyu_proud.webp",
+      "request_id": "01a0eb4c-8c26-7770-a9f8-1dd609527c86",
+      "reference_images": []
+    },
+    {
+      "stem": "baoyu_tearful",
+      "character": "贾宝玉",
+      "source": "art/sprites/baoyu_tearful.png",
+      "runtime": "web/game/figure/baoyu_tearful.webp",
+      "request_id": "01a0eb4f-12ee-7e51-a1ab-2e13c08a1fee",
+      "reference_images": []
+    },
+    {
+      "stem": "daiyu",
+      "character": "林黛玉",
+      "source": "art/sprites/daiyu.png",
+      "runtime": "web/game/figure/daiyu.webp",
+      "request_id": "01a0eb1c-d219-70d2-8b74-902563b28da9",
+      "reference_images": [
+        "docs/12图/64561839e365f79c3fbaf8e69f8f9160.jpg"
+      ]
+    },
+    {
+      "stem": "daiyu_sneer",
+      "character": "林黛玉",
+      "source": "art/sprites/daiyu_sneer.png",
+      "runtime": "web/game/figure/daiyu_sneer.webp",
+      "request_id": "01a0eb22-2d67-7ca0-8abb-d623112b3b3f",
+      "reference_images": [
+        "docs/12图/64561839e365f79c3fbaf8e69f8f9160.jpg"
+      ]
+    },
+    {
+      "stem": "daiyu_smile",
+      "character": "林黛玉",
+      "source": "art/sprites/daiyu_smile.png",
+      "runtime": "web/game/figure/daiyu_smile.webp",
+      "request_id": "01a0eb53-2046-7940-a713-252275b5b550",
+      "reference_images": [
+        "docs/12图/64561839e365f79c3fbaf8e69f8f9160.jpg"
+      ]
+    },
+    {
+      "stem": "daiyu_tearful",
+      "character": "林黛玉",
+      "source": "art/sprites/daiyu_tearful.png",
+      "runtime": "web/game/figure/daiyu_tearful.webp",
+      "request_id": "01a0eb53-302d-78f3-a988-6c14953eb0e7",
+      "reference_images": [
+        "docs/12图/64561839e365f79c3fbaf8e69f8f9160.jpg"
+      ]
+    },
+    {
+      "stem": "baochai",
+      "character": "薛宝钗",
+      "source": "art/sprites/baochai.png",
+      "runtime": "web/game/figure/baochai.webp",
+      "request_id": "01a0eb1a-4d7c-7110-9ad9-3a01ded56bc8",
+      "reference_images": [
+        "docs/12图/5318e676b61afc4f450f5a8865a203b2.jpg"
+      ]
+    },
+    {
+      "stem": "baochai_smile",
+      "character": "薛宝钗",
+      "source": "art/sprites/baochai_smile.png",
+      "runtime": "web/game/figure/baochai_smile.webp",
+      "request_id": "01a0eb44-e565-7b53-9499-53c6d6e3ee72",
+      "reference_images": [
+        "docs/12图/5318e676b61afc4f450f5a8865a203b2.jpg"
+      ]
+    },
+    {
+      "stem": "baochai_shy",
+      "character": "薛宝钗",
+      "source": "art/sprites/baochai_shy.png",
+      "runtime": "web/game/figure/baochai_shy.webp",
+      "request_id": "01a0eb3f-66cb-75f2-b153-af8f9f5ceeb0",
+      "reference_images": [
+        "docs/12图/5318e676b61afc4f450f5a8865a203b2.jpg"
+      ]
+    },
+    {
+      "stem": "baochai_stern",
+      "character": "薛宝钗",
+      "source": "art/sprites/baochai_stern.png",
+      "runtime": "web/game/figure/baochai_stern.webp",
+      "request_id": "01a0eb41-9314-77a0-8a26-db735f23437d",
+      "reference_images": [
+        "docs/12图/5318e676b61afc4f450f5a8865a203b2.jpg"
+      ]
+    },
+    {
+      "stem": "fengjie",
+      "character": "王熙凤",
+      "source": "art/sprites/fengjie.png",
+      "runtime": "web/game/figure/fengjie.webp",
+      "request_id": "01a0eb1f-49bd-77e2-af3f-ad83d4982005",
+      "reference_images": [
+        "docs/12图/1db5502c6eaeaeac3f8271a4993abf14.jpg"
+      ]
+    },
+    {
+      "stem": "fengjie_smile",
+      "character": "王熙凤",
+      "source": "art/sprites/fengjie_smile.png",
+      "runtime": "web/game/figure/fengjie_smile.webp",
+      "request_id": "01a0eb4d-866c-7241-b221-8e8ee219bb84",
+      "reference_images": [
+        "docs/12图/1db5502c6eaeaeac3f8271a4993abf14.jpg"
+      ]
+    },
+    {
+      "stem": "fengjie_scheme",
+      "character": "王熙凤",
+      "source": "art/sprites/fengjie_scheme.png",
+      "runtime": "web/game/figure/fengjie_scheme.webp",
+      "request_id": "01a0eb4c-781d-7f53-92a7-c4ff71cd8443",
+      "reference_images": [
+        "docs/12图/1db5502c6eaeaeac3f8271a4993abf14.jpg"
+      ]
+    },
+    {
+      "stem": "fengjie_stern",
+      "character": "王熙凤",
+      "source": "art/sprites/fengjie_stern.png",
+      "runtime": "web/game/figure/fengjie_stern.webp",
+      "request_id": "01a0eb53-446d-7840-bdcb-a2c3c7e72809",
+      "reference_images": [
+        "docs/12图/1db5502c6eaeaeac3f8271a4993abf14.jpg"
+      ]
+    },
+    {
+      "stem": "fengjie_troubled",
+      "character": "王熙凤",
+      "source": "art/sprites/fengjie_troubled.png",
+      "runtime": "web/game/figure/fengjie_troubled.webp",
+      "request_id": "01a0eb53-ad65-70a1-b4cf-b2add985050a",
+      "reference_images": [
+        "docs/12图/1db5502c6eaeaeac3f8271a4993abf14.jpg"
+      ]
+    },
+    {
+      "stem": "laolao",
+      "character": "刘姥姥",
+      "source": "art/sprites/laolao.png",
+      "runtime": "web/game/figure/laolao.webp",
+      "request_id": "01a0eb1e-330b-7df2-b742-ca07af193926",
+      "reference_images": [
+        "docs/12图/a17737461e58d664de9ddf146d88dfdd.jpg"
+      ]
+    },
+    {
+      "stem": "laolao_plead",
+      "character": "刘姥姥",
+      "source": "art/sprites/laolao_plead.png",
+      "runtime": "web/game/figure/laolao_plead.webp",
+      "request_id": "01a0eb45-1705-7193-9b74-f6295008dd33",
+      "reference_images": [
+        "docs/12图/a17737461e58d664de9ddf146d88dfdd.jpg"
+      ]
+    },
+    {
+      "stem": "laolao_joy",
+      "character": "刘姥姥",
+      "source": "art/sprites/laolao_joy.png",
+      "runtime": "web/game/figure/laolao_joy.webp",
+      "request_id": "01a0eb48-4e16-7413-bbf2-3eb7c7c00dbe",
+      "reference_images": [
+        "docs/12图/a17737461e58d664de9ddf146d88dfdd.jpg"
+      ]
+    },
+    {
+      "stem": "yucun",
+      "character": "贾雨村",
+      "source": "art/sprites/yucun.png",
+      "runtime": "web/game/figure/yucun.webp",
+      "request_id": "01a0eb42-2944-74a1-ac24-295d13984bf7",
+      "reference_images": []
+    },
+    {
+      "stem": "yucun_ponder",
+      "character": "贾雨村",
+      "source": "art/sprites/yucun_ponder.png",
+      "runtime": "web/game/figure/yucun_ponder.webp",
+      "request_id": "01a0eb4b-b80b-7220-94b0-fdc2d4706725",
+      "reference_images": []
+    },
+    {
+      "stem": "yucun_sly",
+      "character": "贾雨村",
+      "source": "art/sprites/yucun_sly.png",
+      "runtime": "web/game/figure/yucun_sly.webp",
+      "request_id": "01a0eb51-7933-7e90-83e3-49fde027a595",
+      "reference_images": []
+    },
+    {
+      "stem": "yucun_earnest",
+      "character": "贾雨村",
+      "source": "art/sprites/yucun_earnest.png",
+      "runtime": "web/game/figure/yucun_earnest.webp",
+      "request_id": "01a0eb51-6ac8-7781-b08e-7f3d26e3138c",
+      "reference_images": []
+    },
+    {
+      "stem": "jiarui",
+      "character": "贾瑞",
+      "source": "art/sprites/jiarui.png",
+      "runtime": "web/game/figure/jiarui.webp",
+      "request_id": "01a0eb42-2a4a-7fd0-a346-75bf691985f2",
+      "reference_images": [
+        "docs/12图/a17737461e58d664de9ddf146d88dfdd.jpg"
+      ]
+    },
+    {
+      "stem": "jiarui_leer",
+      "character": "贾瑞",
+      "source": "art/sprites/jiarui_leer.png",
+      "runtime": "web/game/figure/jiarui_leer.webp",
+      "request_id": "01a0eb4a-f5ec-7690-8b3f-6e3efbcf84ec",
+      "reference_images": [
+        "docs/12图/a17737461e58d664de9ddf146d88dfdd.jpg"
+      ]
+    },
+    {
+      "stem": "keqing",
+      "character": "秦可卿",
+      "source": "art/sprites/keqing.png",
+      "runtime": "web/game/figure/keqing.webp",
+      "request_id": "01a0eb1f-3af4-7e02-9c20-777b277e612a",
+      "reference_images": [
+        "docs/12图/83008da491be099883e07fb06289f2f3.jpg"
+      ]
+    },
+    {
+      "stem": "keqing_sorrow",
+      "character": "秦可卿",
+      "source": "art/sprites/keqing_sorrow.png",
+      "runtime": "web/game/figure/keqing_sorrow.webp",
+      "request_id": "01a0eb55-621a-7af0-b401-2e5448c17cbe",
+      "reference_images": [
+        "docs/12图/83008da491be099883e07fb06289f2f3.jpg"
+      ]
+    },
+    {
+      "stem": "jiazheng",
+      "character": "贾政",
+      "source": "art/sprites/jiazheng.png",
+      "runtime": "web/game/figure/jiazheng.webp",
+      "request_id": "01a0eb1f-4be7-7311-a0e1-a6c044098440",
+      "reference_images": []
+    },
+    {
+      "stem": "jiazheng_scold",
+      "character": "贾政",
+      "source": "art/sprites/jiazheng_scold.png",
+      "runtime": "web/game/figure/jiazheng_scold.webp",
+      "request_id": "01a0eb56-97a5-74d0-8f2f-8f15abbec2b0",
+      "reference_images": []
+    },
+    {
+      "stem": "jiazheng_nod",
+      "character": "贾政",
+      "source": "art/sprites/jiazheng_nod.png",
+      "runtime": "web/game/figure/jiazheng_nod.webp",
+      "request_id": "01a0eb5a-3900-7a60-82e8-ad39a54bcff0",
+      "reference_images": []
+    },
+    {
+      "stem": "yuanchun",
+      "character": "贾元春",
+      "source": "art/sprites/yuanchun.png",
+      "runtime": "web/game/figure/yuanchun.webp",
+      "request_id": "01a0eb21-ee5a-72c1-a369-5a029baba35e",
+      "reference_images": [
+        "docs/12图/5fd19ccf7a9092c2324bc7af27145e74.jpg"
+      ]
+    },
+    {
+      "stem": "yuanchun_tearful",
+      "character": "贾元春",
+      "source": "art/sprites/yuanchun_tearful.png",
+      "runtime": "web/game/figure/yuanchun_tearful.webp",
+      "request_id": "01a0eb56-f4f3-75c1-a34a-4ed607f48b94",
+      "reference_images": [
+        "docs/12图/5fd19ccf7a9092c2324bc7af27145e74.jpg"
+      ]
+    },
+    {
+      "stem": "xiangyun",
+      "character": "史湘云",
+      "source": "art/sprites/xiangyun.png",
+      "runtime": "web/game/figure/xiangyun.webp",
+      "request_id": "01a0eb43-f8eb-7aa3-ae74-6b828bb55895",
+      "reference_images": [
+        "docs/12图/cb013128fc892b2471b5b627cead9b1f.jpg"
+      ]
+    },
+    {
+      "stem": "xiangyun_laugh",
+      "character": "史湘云",
+      "source": "art/sprites/xiangyun_laugh.png",
+      "runtime": "web/game/figure/xiangyun_laugh.webp",
+      "request_id": "01a0eb4f-42e4-75d1-a618-bc1e33c62387",
+      "reference_images": [
+        "docs/12图/cb013128fc892b2471b5b627cead9b1f.jpg"
+      ]
+    },
+    {
+      "stem": "xiangyun_pout",
+      "character": "史湘云",
+      "source": "art/sprites/xiangyun_pout.png",
+      "runtime": "web/game/figure/xiangyun_pout.webp",
+      "request_id": "01a0eb51-0d62-7ed3-a996-9c360e7f3cdd",
+      "reference_images": [
+        "docs/12图/cb013128fc892b2471b5b627cead9b1f.jpg"
+      ]
+    },
+    {
+      "stem": "lengzixing",
+      "character": "冷子兴",
+      "source": "art/sprites/lengzixing.png",
+      "runtime": "web/game/figure/lengzixing.webp",
+      "request_id": "01a0eb42-2cdb-7001-8e66-6cc4e508a9e7",
+      "reference_images": []
+    },
+    {
+      "stem": "lengzixing_gossip",
+      "character": "冷子兴",
+      "source": "art/sprites/lengzixing_gossip.png",
+      "runtime": "web/game/figure/lengzixing_gossip.webp",
+      "request_id": "01a0eb59-c365-7392-87cc-3c8416333fa6",
+      "reference_images": []
+    },
+    {
+      "stem": "jiaqiang",
+      "character": "贾蔷",
+      "source": "art/sprites/jiaqiang.png",
+      "runtime": "web/game/figure/jiaqiang.webp",
+      "request_id": "01a0eb46-0e7c-70b2-91c6-d48d1bb527a7",
+      "reference_images": []
+    },
+    {
+      "stem": "jiaqiang_sly",
+      "character": "贾蔷",
+      "source": "art/sprites/jiaqiang_sly.png",
+      "runtime": "web/game/figure/jiaqiang_sly.webp",
+      "request_id": "01a0eb5c-45fa-7ac1-bb9c-7434cd4f90a9",
+      "reference_images": []
+    },
+    {
+      "stem": "mingyan",
+      "character": "茗烟",
+      "source": "art/sprites/mingyan.png",
+      "runtime": "web/game/figure/mingyan.webp",
+      "request_id": "01a0eb21-f2ce-75f0-a16e-b929abb7cfe1",
+      "reference_images": [
+        "docs/12图/a17737461e58d664de9ddf146d88dfdd.jpg"
+      ]
+    },
+    {
+      "stem": "mingyan_fierce",
+      "character": "茗烟",
+      "source": "art/sprites/mingyan_fierce.png",
+      "runtime": "web/game/figure/mingyan_fierce.webp",
+      "request_id": "01a0eb4c-2e26-7d80-81c0-699031ca984e",
+      "reference_images": [
+        "docs/12图/a17737461e58d664de9ddf146d88dfdd.jpg"
+      ]
+    },
+    {
+      "stem": "jinshi",
+      "character": "璜大奶奶",
+      "source": "art/sprites/jinshi.png",
+      "runtime": "web/game/figure/jinshi.webp",
+      "request_id": "01a0eb3f-118b-7593-9823-91d605ff7688",
+      "reference_images": [
+        "docs/12图/a17737461e58d664de9ddf146d88dfdd.jpg"
+      ]
+    },
+    {
+      "stem": "jinshi_angry",
+      "character": "璜大奶奶",
+      "source": "art/sprites/jinshi_angry.png",
+      "runtime": "web/game/figure/jinshi_angry.webp",
+      "request_id": "01a0eb57-ab94-7651-a8f6-e0ad692a7fc0",
+      "reference_images": [
+        "docs/12图/a17737461e58d664de9ddf146d88dfdd.jpg"
+      ]
+    },
+    {
+      "stem": "jinshi_fawn",
+      "character": "璜大奶奶",
+      "source": "art/sprites/jinshi_fawn.png",
+      "runtime": "web/game/figure/jinshi_fawn.webp",
+      "request_id": "01a0eb5a-68d1-7003-96fb-11e03c7a2b06",
+      "reference_images": [
+        "docs/12图/a17737461e58d664de9ddf146d88dfdd.jpg"
+      ]
+    },
+    {
+      "stem": "qinzhong",
+      "character": "秦钟",
+      "source": "art/sprites/qinzhong.png",
+      "runtime": "web/game/figure/qinzhong.webp",
+      "request_id": "01a0eb44-bfd5-76a1-9333-790750159779",
+      "reference_images": [
+        "docs/12图/a17737461e58d664de9ddf146d88dfdd.jpg"
+      ]
+    },
+    {
+      "stem": "qinzhong_ill",
+      "character": "秦钟",
+      "source": "art/sprites/qinzhong_ill.png",
+      "runtime": "web/game/figure/qinzhong_ill.webp",
+      "request_id": "01a0eb48-94e7-79a1-bafa-6a6103a4d18b",
+      "reference_images": [
+        "docs/12图/a17737461e58d664de9ddf146d88dfdd.jpg"
+      ]
+    },
+    {
+      "stem": "xiren",
+      "character": "袭人",
+      "source": "art/sprites/xiren.png",
+      "runtime": "web/game/figure/xiren.webp",
+      "request_id": "01a0eb21-559e-7b82-b3bf-2a4d0d31b630",
+      "reference_images": [
+        "docs/12图/a17737461e58d664de9ddf146d88dfdd.jpg"
+      ]
+    },
+    {
+      "stem": "xiren_firm",
+      "character": "袭人",
+      "source": "art/sprites/xiren_firm.png",
+      "runtime": "web/game/figure/xiren_firm.webp",
+      "request_id": "01a0eb3f-14af-7bc1-a9ed-41ff4d7f4601",
+      "reference_images": [
+        "docs/12图/a17737461e58d664de9ddf146d88dfdd.jpg"
+      ]
+    },
+    {
+      "stem": "xiren_smile",
+      "character": "袭人",
+      "source": "art/sprites/xiren_smile.png",
+      "runtime": "web/game/figure/xiren_smile.webp",
+      "request_id": "01a0eb41-3442-7ec1-a2c4-7f3f8a3514fc",
+      "reference_images": [
+        "docs/12图/a17737461e58d664de9ddf146d88dfdd.jpg"
+      ]
+    },
+    {
+      "stem": "jiahuan",
+      "character": "贾环",
+      "source": "art/sprites/jiahuan.png",
+      "runtime": "web/game/figure/jiahuan.webp",
+      "request_id": "01a0eb46-b0a4-7bd3-8311-244cb2a754a0",
+      "reference_images": []
+    },
+    {
+      "stem": "jiahuan_cry",
+      "character": "贾环",
+      "source": "art/sprites/jiahuan_cry.png",
+      "runtime": "web/game/figure/jiahuan_cry.webp",
+      "request_id": "01a0eb4d-475c-7813-8594-6924b0fce577",
+      "reference_images": []
+    },
+    {
+      "stem": "yinger",
+      "character": "莺儿",
+      "source": "art/sprites/yinger.png",
+      "runtime": "web/game/figure/yinger.webp",
+      "request_id": "01a0eb43-a4ac-7423-aab6-382ea69bb43c",
+      "reference_images": [
+        "docs/12图/a17737461e58d664de9ddf146d88dfdd.jpg"
+      ]
+    },
+    {
+      "stem": "yinger_pout",
+      "character": "莺儿",
+      "source": "art/sprites/yinger_pout.png",
+      "runtime": "web/game/figure/yinger_pout.webp",
+      "request_id": "01a0eb5a-535a-7d72-8900-22e30dfb9848",
+      "reference_images": [
+        "docs/12图/a17737461e58d664de9ddf146d88dfdd.jpg"
+      ]
+    },
+    {
+      "stem": "beijingwang",
+      "character": "北静王",
+      "source": "art/sprites/beijingwang.png",
+      "runtime": "web/game/figure/beijingwang.webp",
+      "request_id": "01a0eb56-5c11-7601-841f-541bb03cd8a8",
+      "reference_images": []
+    }
+  ],
+  "verification": {
+    "runtime": "WebGAL 4.6.5 in Chromium",
+    "new_portraits_rendered": 57,
+    "changeFigureDiff_transitions": 37,
+    "portraits_with_blink_observed": 57,
+    "portraits_with_talk_observed": 57,
+    "figure_resource_errors": 0,
+    "total_runtime_figures": 64,
+    "total_runtime_face_patches": 128,
+    "lossless_figure_exports_checked": 64,
+    "production_scenes_modified": false,
+    "deployed_online": true,
+    "deployed_url": "https://hongloumeng.bobbyhuang.dev/",
+    "cloudflare_version": "cd10d9a2-70d9-40a2-a15f-286e829be2ae",
+    "online_artwork_files_sha256_verified": 193
+  }
+}
